@@ -9,6 +9,8 @@
 <html>
 
     <head>
+    <center><img src="https://wiki.gamedetectives.net/images/thumb/b/bf/Overwatch_logo.jpg/600px-Overwatch_logo.jpg"></center>
+    
     <meta charset="UTF-8">
     <link rel="stylesheet" href="global.css">
     <div id="menu">
