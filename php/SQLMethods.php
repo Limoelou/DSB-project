@@ -1,61 +1,17 @@
 <?php
 
 
-
-function manageDisconnect()
+function getAccount($bdd,$username )
 {
-	if(isset($_GET['disconnect']))
-	{
-		session_destroy();
-		echo('<i class="fa fa-times close"></i><meta http-equiv="refresh" content="0; URL=index.php">');
-	}
-}
-function manageLogin($bdd)
-{
-	if(isset($_GET['login'])) 
-	{
-		$mail = sanitize($_GET['logemail']);
-		$password = sanitize($_GET['logpassword']);
-		
-		$result = $bdd->query("SELECT * FROM accounts where Email = '".$mail."'");
+		$result = $bdd->query("SELECT * FROM accounts where Username = '".$username."'");
 		$row = $result->fetch();
-		
-		if ($row == null || $row['Password'] != $password)
-		{
-			// Nom de compte ou mot de passe incorrect
-		}
-		else
-		{
-			
-			$_SESSION['account'] = $row;
-			
-		 	echo('<i class="fa fa-times close"></i><meta http-equiv="refresh" content="0; URL=myAccount.php">');
+		return $row;
 
-		}
-	}
 }
-function accountExist($bdd,$mail)
+
+function manageRegister($bdd,$username,$password)
 {
-	@$search = $bdd->prepare("SELECT * FROM accounts WHERE Email = :mail");
-		$search->bindValue(":mail", $mail);
-		$search->execute();
-		@$exist = $search->rowCount();
-}
-function manageRegister($bdd)
-{
-	if(isset($_GET['register'])) 
-	{
-		$firstname = sanitize($_GET['firstname']);
-		$surname = sanitize($_GET['surname']);
-		$mail = sanitize($_GET['mail']);
-		$adress = sanitize($_GET['adress']);
-		$postalcode = sanitize($_GET['postalcode']);
-		$city = sanitize($_GET['city']);
-		$state = sanitize($_GET['state']);
-		$password = sanitize($_GET['password']);
-		$passwordConf = sanitize($_GET['passwordConf']);
-		
-		
+	
 		$exist = accountExist($bdd,$mail);
 	
 		if ($exist)
@@ -69,11 +25,6 @@ function manageRegister($bdd)
 				$req->execute();
 		}
 		echo('<i class="fa fa-times close"></i><meta http-equiv="refresh" content="0; URL=index.php">');
-	
-	
-		
-		
-	}
 	
 }
 
