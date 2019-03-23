@@ -93,7 +93,7 @@
                   
                     <div class="clearfix"></div>
                     <h2 class="section-heading">Requêtes</h2>
-                    <p class="lead">Voici plusieurs requêtes à la base de données. Selon les exemples qui nous ont été demandés: </p>
+                    <p class="lead">Voici plusieurs requêtes à la base de données. Une selection avec projection, éééé </p>
                     <h4 class="section-heading"><u>Selection avec projection</u></h4>
 
 
@@ -112,7 +112,8 @@
                     </tr>
 
 
-
+SELECT AVG( Firerate ) AS AverageFireRate
+FROM weapons
                     <?php 
                     
                     $result = $bdd->query("SELECT Id,Name from Characters where LifePoints = 200");
@@ -132,8 +133,20 @@
 
                     </table>
                    
-
+                    <h4 class="section-heading"><u>Moyenne</u></h4>
                     
+                    <table  border ="1" cellspacing="1" cellpadding="1"><tr><td><div align=center>SELECT AVG( Firerate ) AS AverageFireRate FROM weapons</div></td><tr></table>
+                    <?php 
+                    
+                    $result = $bdd->query("SELECT AVG( Firerate ) AS AverageFireRate FROM weapons");
+                 
+                   
+                    $row = $result->fetch();
+
+
+                    echo("Moyenne: ".$row['AverageFireRate'])
+
+                    ?>
           
               </center>
              
