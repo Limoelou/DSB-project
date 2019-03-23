@@ -94,7 +94,7 @@
                     <div class="clearfix"></div>
                     <h2 class="section-heading">Requêtes</h2>
                     <p class="lead">Voici plusieurs requêtes à la base de données. Selon les exemples qui nous ont été demandés: </p>
-                    <h4 class="section-heading">Selection avec projection</h4>
+                    <h4 class="section-heading"><u>Selection avec projection</u></h4>
 
 
                     <p> Voici a quoi ressemble notre table 'Characters':</p>
