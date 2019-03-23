@@ -75,11 +75,9 @@
             
               
                 
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="intro-message">
+        
                       
-                        <h3>Bienvenu sur le site de notre projet de DSB!</h3>
+                        <h3>Bienvenue sur le site de notre projet de DSB!</h3>
                         <hr class="intro-divider">
                         <ul class="list-inline intro-social-buttons">
                          
@@ -88,8 +86,7 @@
                             </li>
                         </ul>
                     </div>
-                </div>
-            </div>
+            
 
         </div>
         <!-- /.container -->
@@ -111,14 +108,13 @@
                     <p class="lead">Louis-Bonneau Melen</p>
                     <p class="lead">Lumbroso Marius</p>
                     <p class="lead">Robert Louis</p>
-
                     <h2 class="section-heading">Présentation</h2>
                  <p class="lead">Ce site web a été crée dans le cadre du cours du DSB en deuxième année de licence, a l'istic. Il a été réalisé en <b>XHTML</b>, <b>PHP</b> et <b>MySQL</b>
                  Nous avons remplis manuellement nos tables SQL a partir des informations récupéré sur le site <a href="https://overwatch.gamepedia.com/Overwatch_Wiki">Overwatch Wiki</a>
                  
                    en rapport avec le jeu vidéo de Blizzard: Overwatch. </p>
                    
-                   <p class="lead"> <a href="TODO">Données au format XML</a> </p>
+                  
               
              <center>
               
@@ -156,7 +152,9 @@
                 <div class="col-lg-5 col-sm-6">
                     <hr class="section-heading-spacer">
                     <div class="clearfix"></div>
-                    <h2 class="section-heading">Google Web Fonts and<br>Font Awesome Icons</h2>
+                    <h2 class="section-heading">Données </h2>
+                    <p class="lead"> <a href="TODO">Données au format XML</a> </p>
+                    <p class="lead"> <a href="TODO">Télécharger le fichier DTD</a> </p>
                     <p class="lead">This template features the 'Lato' font, part of the <a target="_blank" href="http://www.google.com/fonts">Google Web Font library</a>, as well as <a target="_blank" href="http://fontawesome.io">icons from Font Awesome</a>.</p>
                 </div>
                 <div class="col-lg-5 col-lg-offset-2 col-sm-6">
@@ -222,7 +220,7 @@
                             <a href="#contact">Contact</a>
                         </li>
                     </ul>
-                    <p class="copyright text-muted small">Copyright &copy; Your Company 2014. All Rights Reserved</p>
+
                 </div>
             </div>
         </div>
