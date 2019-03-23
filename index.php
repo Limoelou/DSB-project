@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Landing Page - Start Bootstrap Theme</title>
+    <title>Overwatch project</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -46,19 +46,23 @@
                 <a class="navbar-brand topnav" href="#">Start Bootstrap</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
+            
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
+            
                     <li>
-                        <a href="#about">About</a>
+                        <a href="requests.php">Requètes</a>
                     </li>
                     <li>
-                        <a href="#services">Services</a>
+                        <a href="auth.php">Authentification</a>
                     </li>
                     <li>
                         <a href="#contact">Contact</a>
                     </li>
+                
                 </ul>
             </div>
+            
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container -->
@@ -106,8 +110,8 @@
                     <p class="lead">Lumbroso Marius</p>
                     <p class="lead">Robert Louis</p>
                     <h2 class="section-heading">Présentation</h2>
-                    <p class="lead">Ce site web a été crée dans le cadre du cours du DSB en deuxième année de licence, a l'istic. Il a été réalisé en <b>XHTML</b>, <b>PHP</b> et <b>MySQL</b>
-                    Nous avons remplis manuellement nos tables SQL a partir des informations récupéré sur le site <a href="https://overwatch.gamepedia.com/Overwatch_Wiki">Overwatch Wiki</a>
+                    <p class="lead">Ce site web a été crée dans le cadre du cours du DSB en deuxième année de licence, a l'ISTIC. Il a été réalisé en <b>XHTML</b>, <b>PHP</b> et <b>MySQL</b>
+                    Nous avons rempli manuellement nos tables SQL à partir des informations récupérées sur le site <a href="https://overwatch.gamepedia.com/Overwatch_Wiki">Overwatch Wiki</a>
                     
                     en rapport avec le jeu vidéo de Blizzard: Overwatch. </p>
                     
@@ -130,7 +134,6 @@
                     <h2 class="section-heading">Données </h2>
                     <p class="lead"> <a href="TODO">Données au format XML</a> </p>
                     <p class="lead"> <a href="TODO">Télécharger le fichier DTD</a> </p>
-                    <p class="lead">This template features the 'Lato' font, part of the <a target="_blank" href="http://www.google.com/fonts">Google Web Font library</a>, as well as <a target="_blank" href="http://fontawesome.io">icons from Font Awesome</a>.</p>
 
             </div>
      </center>
@@ -218,21 +221,22 @@
     <!-- /.banner -->
 
     <!-- Footer -->
+    <center>
     <footer>
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <ul class="list-inline">
                         <li>
-                            <a href="#">Home</a>
+                            <a href="#">Accueil</a>
                         </li>
                         <li class="footer-menu-divider">&sdot;</li>
                         <li>
-                            <a href="#about">About</a>
+                            <a href="#about">A propos de nous</a>
                         </li>
                         <li class="footer-menu-divider">&sdot;</li>
                         <li>
-                            <a href="#services">Services</a>
+                            <a href="#services">Données et schéma</a>
                         </li>
                         <li class="footer-menu-divider">&sdot;</li>
                         <li>
@@ -244,6 +248,7 @@
             </div>
         </div>
     </footer>
+       </center>
 
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
