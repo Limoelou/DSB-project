@@ -71,9 +71,6 @@
         <div class="container">
             <img src="https://www.freepnglogos.com/uploads/overwatch-logo-png-format-9.png" >
 
-
-            
-              
                 
         
                       
@@ -97,7 +94,7 @@
     <!-- Page Content -->
 
 	<a  name="services"></a>
-    <div class="content-section-a">
+    <div class="content-section-b">
 
         <div class="container">
            
@@ -109,14 +106,14 @@
                     <p class="lead">Lumbroso Marius</p>
                     <p class="lead">Robert Louis</p>
                     <h2 class="section-heading">Présentation</h2>
-                 <p class="lead">Ce site web a été crée dans le cadre du cours du DSB en deuxième année de licence, a l'istic. Il a été réalisé en <b>XHTML</b>, <b>PHP</b> et <b>MySQL</b>
-                 Nous avons remplis manuellement nos tables SQL a partir des informations récupéré sur le site <a href="https://overwatch.gamepedia.com/Overwatch_Wiki">Overwatch Wiki</a>
-                 
-                   en rapport avec le jeu vidéo de Blizzard: Overwatch. </p>
-                   
+                    <p class="lead">Ce site web a été crée dans le cadre du cours du DSB en deuxième année de licence, a l'istic. Il a été réalisé en <b>XHTML</b>, <b>PHP</b> et <b>MySQL</b>
+                    Nous avons remplis manuellement nos tables SQL a partir des informations récupéré sur le site <a href="https://overwatch.gamepedia.com/Overwatch_Wiki">Overwatch Wiki</a>
+                    
+                    en rapport avec le jeu vidéo de Blizzard: Overwatch. </p>
+                    
                   
               
-             <center>
+                 </center>
               
              
            
@@ -126,47 +123,66 @@
 
     </div>
     <!-- /.content-section-a -->
-
-    <div class="content-section-b">
-
-        <div class="container">
-
-            <div class="row">
-             
-             
-                 
-               
-            </div>
-
-        </div>
-        <!-- /.container -->
-
-    </div>
-    <!-- /.content-section-b -->
-
+    <center>
     <div class="content-section-a">
-
-        <div class="container">
-
-            <div class="row">
-                <div class="col-lg-5 col-sm-6">
-                    <hr class="section-heading-spacer">
-                    <div class="clearfix"></div>
+            <div class="container">
+            
                     <h2 class="section-heading">Données </h2>
                     <p class="lead"> <a href="TODO">Données au format XML</a> </p>
                     <p class="lead"> <a href="TODO">Télécharger le fichier DTD</a> </p>
                     <p class="lead">This template features the 'Lato' font, part of the <a target="_blank" href="http://www.google.com/fonts">Google Web Font library</a>, as well as <a target="_blank" href="http://fontawesome.io">icons from Font Awesome</a>.</p>
-                </div>
-                <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-                    <img class="img-responsive" src="img/phones.jpg" alt="">
-                </div>
-            </div>
 
-        </div>
+            </div>
+     </center>
+
+     </div>
+             
+             
+                 
+               
+
+        <!-- /.container -
+    <!-- /.content-section-b -->
+
+
+
+    <center>
+    <div class="content-section-b">
+            <div class="container">
+            
+                   <center> <h2 class="section-heading">Schéma conceptuel et interprétation des relations </h2> </center>
+                   
+                    <p class="lead">Le schéma suivant nous permet d'avoir une représentation compréhensible et simplifiée des relations qui existent entre les différentes tables.
+                    <br/> <br/> 
+                    <img src = "img/model.png">
+                    
+            </div>
+     </center>
+
+     </div>
+             
+         
         <!-- /.container -->
 
     </div>
     <!-- /.content-section-a -->
+    
+    <center>
+    <div class="content-section-a">
+            <div class="container">
+            
+                   <center> <h2 class="section-heading">Requètes SQL</h2> </center>
+                   
+                    <p class="lead">Les requètes ont été ajoutées sur une autre page du site qui leur est entièrement consacrée afin d'y voir plus clair !<br/>
+                    <center> Cliquez sur le faucheur ahuri ci-dessous pour y accéder. </center>
+                    <br/>
+                    <a href="Requests"><img width = 327 height = 541 src="img/reaper.png" alt="Lien vers les requètes SQL"/></a>    <br/> <br/> 
+
+                    
+            </div>
+     </center>
+
+     </div>
 
 	<a  name="contact"></a>
     <div class="banner">
@@ -175,7 +191,7 @@
 
             <div class="row">
                 <div class="col-lg-6">
-                    <h2>Connect to Start Bootstrap:</h2>
+                   
                 </div>
                 <div class="col-lg-6">
                     <ul class="list-inline banner-social-buttons">
@@ -183,11 +199,13 @@
                             <a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
                         </li>
                         <li>
+                        
                             <a href="https://github.com/IronSummitMedia/startbootstrap" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
                         </li>
                         <li>
                             <a href="#" class="btn btn-default btn-lg"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name">Linkedin</span></a>
                         </li>
+                        <h3>Suivez nous sur les différentes plateformes !</h3>
                     </ul>
                 </div>
             </div>
@@ -196,6 +214,7 @@
         <!-- /.container -->
 
     </div>
+    
     <!-- /.banner -->
 
     <!-- Footer -->
