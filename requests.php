@@ -137,6 +137,7 @@
                     <img src = "https://i.imgur.com/t0LS0Wm.png"/><br/>
                     <p> Nous écrivons la requète suivante : <table border = "1" cellspacing="1" cellpadding="1"><tr><td><div align=center> SELECT AVG( Firerate ) AS AverageFirerate FROM weapons </div></td><tr></table><br/>
                     qui créé une nouvelle colonne 'AverageFirerate' et y inscrit la moyenne des valeurs rentrées dans la colonne 'Firerate' de la table 'Weapons'.
+                    </p>
                     <br/><br/>
                     
                     
@@ -152,11 +153,12 @@
                     echo($row['AverageFireRate'])
 
                     ?>
+                    <br/>
                     </td></table>       <h4 class="section-heading"><u>Jointure</u></h4>
-                    <p>Notre table 'Weapons' est la suivante :</p>
-                    <img src = "https://i.imgur.com/t0LS0Wm.png"/><br/>
-                    <p> Nous écrivons la requète suivante : <table border = "1" cellspacing="1" cellpadding="1"><tr><td><div align=center> SELECT AVG( Firerate ) AS AverageFirerate FROM weapons </div></td><tr></table><br/>
-                    qui créé une nouvelle colonne 'AverageFirerate' et y inscrit la moyenne des valeurs rentrées dans la colonne 'Firerate' de la table 'Weapons'.
+                    <p> L'intérêt d'une jointure est de pouvoir créer des liens entre deux attributs de deux tables différentes.<br/> Nous allons donc nous servir des tables 'weapons' et 'characters' :</p>
+                    <img src = "https://i.imgur.com/t0LS0Wm.png"/><img src ="https://puu.sh/D4i1t/286b3ac322.png"><br/>
+                    <p> Nous écrivons la requète suivante : <table border = "1" cellspacing="1" cellpadding="1"><tr><td><div align=center> ALTER TABLE `characters` ADD FOREIGN KEY ( 'WeaponId' ) REFERENCES 'base_17004654'.'weapons' ('Id') ON DELETE RESTRICT ON UPDATE RESTRICT </div></td><tr></table><br/>
+                    qui associe l'attribut 'WeaponId' de la table 'Characters' à la clé primaire 'Id' de la table 'weapons'. Celà permet d'associer chaque personnage à une arme.
                     <br/><br/>
                     
                     
