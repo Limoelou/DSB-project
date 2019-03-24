@@ -141,19 +141,18 @@
                     
                     
                     <table  border ="1" cellspacing="1" cellpadding="1"><tr><td><div align=center>
-                    
+                    <tr>
+                         <th >AverageFirerate</th>
+                    </tr>
+                    <td>
                     <?php 
                     
                     $result = $bdd->query("SELECT AVG( Firerate ) AS AverageFireRate FROM weapons");
-                 
-                   
                     $row = $result->fetch();
-
-
-                    echo("Moyenne : ".$row['AverageFireRate'])
+                    echo($row['AverageFireRate'])
 
                     ?>
-                    </div></td><tr></table><br/>
+                    </div></td><tr></table><br/></td>
           
               </center>
              
