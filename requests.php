@@ -98,9 +98,9 @@
 
 
                     <p>Notre table 'Characters' est la suivante :</p>
-                    <img src="https://puu.sh/D4i1t/286b3ac322.png" />
+                    <img src="https://puu.sh/D4i1t/286b3ac322.png" /><br/>
                     <p> Nous écrivons la requète suivante : <table  border ="1" cellspacing="1" cellpadding="1"><tr><td><div align=center>SELECT Id,Name from Characters where LifePoints == 200</div></td><tr></table>
-                    <br/> qui renvoie une table avec les colonnes 'Id' et 'Name' des insertions dont la valeur de la colonne 'LifePoints' est égale à 200.
+                    <br/> qui renvoie une table avec les colonnes 'Id' et 'Name' des insertions dont la valeur de la colonne 'LifePoints' est égale à 200 : <br/>
                     <br/>
 
               
@@ -112,7 +112,7 @@
                     </tr>
 
 
-
+                
                     <?php 
                     
                     $result = $bdd->query("SELECT Id,Name from Characters where LifePoints = 200");
@@ -127,12 +127,15 @@
                     }
                    
                     ?>
-
+                
 
 
                     </table>
                    
                     <h4 class="section-heading"><u>Moyenne</u></h4>
+                    <p>Notre table 'Weapons' est la suivante :</p>
+                    <img src = "https://i.imgur.com/t0LS0Wm.png"/>
+                    
                     
                     <table  border ="1" cellspacing="1" cellpadding="1"><tr><td><div align=center>SELECT AVG( Firerate ) AS AverageFireRate FROM weapons</div></td><tr></table>
                     <?php 
