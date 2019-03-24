@@ -89,24 +89,32 @@
 
         <div class="container">
            
-          
-             <center>
-                  
-                    <div class="clearfix"></div>
-                    <h2 class="section-heading">Authentification</h2>
-                    <p class="lead">Voici un page de connexion, elle fonctionne grâce a différentes requêtes SQL et permet de se connecter a son compte Overwatch.</p>
-                   
-                    <form action="account.php">
-                            Nom d'Utilisateur: <input type="text" name="username"><br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;Mot de passe: &nbsp;&nbsp;<input type="password" name="password"><br>
-                            <br>
-                           
+           <?php
 
-                  
-                   
-         <button type="submit">Se connecter</button>
-      </form>
-             </center>
+
+
+if(isset($_GET['username']))
+{
+    $username = $_GET['username'];
+    $password =  $_GET['password'];
+
+    $account = getAccount($bdd,$username);
+
+    if ($account['Password'] == $password)
+    {
+        $_SESSION = $account;
+    }
+
+    echo('connecté');
+}
+else
+{
+    echo("Nom decompte ou mdp incorect");
+}
+    
+
+         ?>
+           
            
 
         </div>
