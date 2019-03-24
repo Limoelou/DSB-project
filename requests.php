@@ -14,7 +14,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Landing Page - Start Bootstrap Theme</title>
+    <title>Overwatch Project - Requests</title>
 
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
@@ -93,14 +93,14 @@
                   
                     <div class="clearfix"></div>
                     <h2 class="section-heading">Requêtes</h2>
-                    <p class="lead">Voici plusieurs requêtes à la base de données. Une selection avec projection, éééé </p>
+                    <p class="lead">Voici plusieurs requètes que nous avons réalisées en nous basant sur notre base de données. </p>
                     <h4 class="section-heading"><u>Selection avec projection</u></h4>
 
 
-                    <p> Voici a quoi ressemble notre table 'Characters':</p>
+                    <p>Notre table 'Characters' est la suivante :</p>
                     <img src="https://puu.sh/D4i1t/286b3ac322.png" />
-
-                    <table  border ="1" cellspacing="1" cellpadding="1"><tr><td><div align=center>SELECT Id,Name from Characters where LifePoints == 200</div></td><tr></table>
+                    <p> Nous écrivons la requète suivante : <table  border ="1" cellspacing="1" cellpadding="1"><tr><td><div align=center>SELECT Id,Name from Characters where LifePoints == 200</div></td><tr></table>
+                    <br/> qui renvoie une table avec les colonnes 'Id' et 'Name' des insertions dont la valeur de la colonne 'LifePoints' est égale à 200.
                     <br/>
 
               
@@ -112,8 +112,7 @@
                     </tr>
 
 
-SELECT AVG( Firerate ) AS AverageFireRate
-FROM weapons
+
                     <?php 
                     
                     $result = $bdd->query("SELECT Id,Name from Characters where LifePoints = 200");
