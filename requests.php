@@ -134,10 +134,14 @@
                    
                     <h4 class="section-heading"><u>Moyenne</u></h4>
                     <p>Notre table 'Weapons' est la suivante :</p>
-                    <img src = "https://i.imgur.com/t0LS0Wm.png"/>
+                    <img src = "https://i.imgur.com/t0LS0Wm.png"/><br/>
+                    <p> Nous écrivons la requète suivante : <table border = "1" cellspacing="1" cellpadding="1"><tr><td><div align=center> SELECT AVG( Firerate ) AS AverageFirerate FROM weapons </div></td><tr></table><br/>
+                    qui créé une nouvelle colonne 'AverageFirerate' et y inscrit la moyenne des valeurs rentrées dans la colonne 'Firerate' de la table 'Weapons'.
+                    <br/><br/>
                     
                     
-                    <table  border ="1" cellspacing="1" cellpadding="1"><tr><td><div align=center>SELECT AVG( Firerate ) AS AverageFireRate FROM weapons</div></td><tr></table>
+                    <table  border ="1" cellspacing="1" cellpadding="1"><tr><td><div align=center>
+                    
                     <?php 
                     
                     $result = $bdd->query("SELECT AVG( Firerate ) AS AverageFireRate FROM weapons");
@@ -146,9 +150,10 @@
                     $row = $result->fetch();
 
 
-                    echo("Moyenne: ".$row['AverageFireRate'])
+                    echo("Moyenne : ".$row['AverageFireRate'])
 
                     ?>
+                    </div></td><tr></table><br/>
           
               </center>
              
