@@ -96,7 +96,7 @@
                   
                     <div class="clearfix"></div>
                     <h2 class="section-heading">Authentification</h2>
-                    <p class="lead">Voici un page de connexion, elle fonctionne grâce a différentes requêtes SQL et permet de se connecter a son compte Overwatch.</p>
+                    <p class="lead">Voici une page de connexion, elle fonctionne grâce à différentes requêtes SQL et permet de se connecter à son compte Overwatch.</p>
                    
                     <form action="account.php">
                             Nom d'Utilisateur: <input type="text" name="username"><br>
@@ -142,7 +142,7 @@
 
             <div class="row">
                 <div class="col-lg-6">
-                    <h2>Connect to Start Bootstrap:</h2>
+                    <h2>Suivez nous sur les différentes plateformes !:</h2>
                 </div>
                 <div class="col-lg-6">
                     <ul class="list-inline banner-social-buttons">

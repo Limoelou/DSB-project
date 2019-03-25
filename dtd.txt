@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!DOCTYPE dsb [
+ <!ELEMENT account (Id,Username, Password,Lootbox,Gold,Level,Rank)>
+ <!ELEMENT Id (#PCDATA)>
+ <!ELEMENT Username (#PCDATA)>
+ <!ELEMENT Password (#PCDATA)>
+ <!ELEMENT Lootbox (#PCDATA)>
+ <!ELEMENT Gold (#PCDATA)>
+ <!ELEMENT Level (#PCDATA)>
+ <!ELEMENT Rank (#PCDATA)>
+
+ <!ELEMENT accountbanned (AccountId, BanDate, Reason)>
+ <!ELEMENT AccountId (#PCDATA)>
+ <!ELEMENT BanDate (#PCDATA)>
+
+ <!ELEMENT weapons (Id, Name, CanHeadshot, IsMelee, Magazine?, DamagePerHit, FireRate)
+ <!ELEMENT Id (#PCDATA)>
+ <!ELEMENT Name (#PCDATA)>
+ <!ELEMENT CanHeadshot (Yes | No)> // ?! \\
+ <!ELEMENT IsMelee (Yes | No)> //J'imagine que c'est ça ^^'
+ <!ELEMENT Magazine (#PCDATA)> // ?! \\
+ <!ELEMENT DamagePerHit (#PCDATA)>
+ <!ELEMENT FireRate (#PCDATA)>
+
+
+ <!ELEMENT characters (Id,Name,LifePoints,Armor?,MapId,SkinId,WeaponId,Shield?>
+ <!ELEMENT Id (#PCDATA)>
+ <!ELEMENT Name (#PCDATA)>
+ <!ELEMENT LifePoints (#PCDATA)>
+ <!ELEMENT Armor (#PCDATA)> // Je sais pas si je dois remettre le "?" j'ai pas trouvé
+ <!ELEMENT MapId (#PCDATA)>
+ <!ELEMENT SkinId (#PCDATA)>
+ <!ELEMENT WeaponId (#PCDATA)>
+ <!ELEMENT Shield (#PCDATA)> // Pareil qu'au dessus
+
+ <!ELEMENT maps (Id, Name, Type)
+ <!ELEMENT Id (#PCDATA)>
+ <!ELEMENT Name (#PCDATA)>
+ <!ELEMENT Type (#PCDATA)>
+
+ <!ELEMENT purchases (AccountId, Date, LootBoxNumber)
+ <!ELEMENT AccountId (#PCDATA)>
+ <!ELEMENT Date (#PCDATA)>
+ <!ELEMENT LootBoxNumber (#PCDATA)>
+]>
+
+//ICI LA SUITE DU COUP
