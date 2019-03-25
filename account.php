@@ -95,6 +95,7 @@
 
 
 
+
 if(isset($_GET['username']))
 {
     $username = $_GET['username'];
@@ -142,9 +143,8 @@ if (isset($_SESSION['account']))
 else
 {
     ?>
-    
-    
-    
+            <h2 class="section-heading">L'identification n'a pas fonctionée! </h2>
+            <p class="lead">Nom de compte ou mot de passe incorect.</p>
        <?php
 }  ?>
    
