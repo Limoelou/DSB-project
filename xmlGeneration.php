@@ -41,20 +41,30 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand topnav" href="#">Start Bootstrap</a>
+                <a class="navbar-brand topnav" href="#">Project DSB</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="#about">About</a>
+            
+                     <li>
+                        <a href="index.php">Accueil</a>
                     </li>
                     <li>
-                        <a href="#services">Services</a>
+                        <a href="requests.php">Requêtes</a>
                     </li>
+
+                    <?php if (isset($_SESSION['account'])) {  ?>
                     <li>
-                        <a href="#contact">Contact</a>
+                    <a href="account.php">Mon compte</a>
+                      
                     </li>
+                    <?php } else {  ?>
+                        <li>
+                        <a href="authentification.php">Se connecter</a>
+                        </li>
+                    <?php } ?>
+
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -67,15 +77,7 @@
     <a name="about"></a>
     <div class="intro-header">
         <div class="container">
-            <img src="https://www.freepnglogos.com/uploads/overwatch-logo-png-format-9.png" >
-
-
-            
-              
-                
-           
-          
-
+            <img src="img/logo.png" >
         </div>
         <!-- /.container -->
 
@@ -88,28 +90,17 @@
     <div class="content-section-a">
 
         <div class="container">
-           
-          
-             <center>
-                  
-                    <div class="clearfix"></div>
-                    <h2 class="section-heading">Authentification</h2>
-                    <p class="lead">Voici un page de connexion, elle fonctionne grâce a différentes requêtes SQL et permet de se connecter a son compte Overwatch.</p>
-                   
-                    <form action="account.php">
-                            Nom d'Utilisateur: <input type="text" name="username"><br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;Mot de passe: &nbsp;&nbsp;<input type="password" name="password"><br>
-                            <br>
-                           
+                        <center>
+        <?php echo(createXML($bdd)); ?>
 
-                  
-                   
-         <button type="submit">Se connecter</button>
-      </form>
-             </center>
-           
+        <h2 class="section-heading">Génération XML terminée!</h2>
+            <p> La base de donnée vient d'être générée au format XML en temps réel grâce a la fonction <i>createXML($bdd)</i>
+            dans le fichier SQLMethods.php </p> 
+         <a href="database.xml" class="btn btn-default">Télécharger le fichier XML</a>
 
         </div>
+
+        </center>
         <!-- /.container -->
 
     </div>

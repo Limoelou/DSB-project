@@ -1,11 +1,11 @@
 <!DOCTYPE html>
+<html lang="en">
+
 <?php
    require_once ('php/config.php');
    require_once ('php/SQLMethods.php');
    session_start();
 ?>
-<html lang="en">
-
 <head>
 
     <meta charset="utf-8">
@@ -14,24 +14,17 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Overwatch project</title>
+    <title>Overwatch Project - Requests</title>
 
-    <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Custom CSS -->
+
     <link href="css/landing-page.css" rel="stylesheet">
 
-    <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+
 
 </head>
 
@@ -51,7 +44,6 @@
                 <a class="navbar-brand topnav" href="#">Project DSB</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
-            
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
             
@@ -75,7 +67,6 @@
 
                 </ul>
             </div>
-            
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container -->
@@ -86,22 +77,7 @@
     <a name="about"></a>
     <div class="intro-header">
         <div class="container">
-            <img src="img/logo.png" >
-
-                
-        
-                      
-                        <h3>Bienvenue sur le site de notre projet de DSB!</h3>
-                        <hr class="intro-divider">
-                        <ul class="list-inline intro-social-buttons">
-                         
-                            <li>
-                                <a href="https://github.com/Limoelou/DSB-project" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
-                            </li>
-                        </ul>
-                    </div>
-            
-
+             <img src="img/logo.png" >
         </div>
         <!-- /.container -->
 
@@ -111,28 +87,28 @@
     <!-- Page Content -->
 
 	<a  name="services"></a>
-    <div class="content-section-b">
+    <div class="content-section-a">
 
         <div class="container">
            
+          
              <center>
                   
                     <div class="clearfix"></div>
-                    <h2 class="section-heading">Auteurs</h2>
-                    <p class="lead">Louis-Bonneau Melen</p>
-                    <p class="lead">Lumbroso Marius</p>
-                    <p class="lead">Robert Louis</p>
-                    <h2 class="section-heading">Présentation</h2>
-                    <p class="lead">Ce site web a été crée dans le cadre du cours du DSB en deuxième année de licence, a l'ISTIC. Il a été réalisé en <b>XHTML</b>, <b>PHP</b> et <b>MySQL</b>
-                    Nous avons rempli manuellement nos tables SQL à partir des informations récupérées sur le site <a href="https://overwatch.gamepedia.com/Overwatch_Wiki">Overwatch Wiki</a>
-                    
-                    en rapport avec le jeu vidéo de Blizzard: Overwatch. </p>
-                    
+                    <h2 class="section-heading">Authentification</h2>
+                    <p class="lead">Voici un page de connexion, elle fonctionne grâce a différentes requêtes SQL et permet de se connecter a son compte Overwatch.</p>
+                   
+                    <form action="account.php">
+                            Nom d'Utilisateur: <input type="text" name="username"><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;Mot de passe: &nbsp;&nbsp;<input type="password" name="password"><br>
+                            <br>
+                           
+
                   
-              
-                 </center>
-              
-             
+                   
+         <button type="submit">Se connecter</button>
+      </form>
+             </center>
            
 
         </div>
@@ -140,65 +116,24 @@
 
     </div>
     <!-- /.content-section-a -->
-    <center>
-    <div class="content-section-a">
-            <div class="container">
-            
-                    <h2 class="section-heading">Données </h2>
-                    <p class="lead"> <a href="xmlGeneration.php">Données au format XML</a> </p>
-                    <p class="lead"> <a href="TODO">Télécharger le fichier DTD</a> </p>
 
-            </div>
-     </center>
+    <div class="content-section-b">
 
-     </div>
+        <div class="container">
+
+            <div class="row">
              
              
                  
                
-
-        <!-- /.container -
-    <!-- /.content-section-b -->
-
-
-
-    <center>
-    <div class="content-section-b">
-            <div class="container">
-            
-                   <center> <h2 class="section-heading">Schéma conceptuel et interprétation des relations </h2> </center>
-                   
-                    <p class="lead">Le schéma suivant nous permet d'avoir une représentation compréhensible et simplifiée des relations qui existent entre les différentes tables.
-                    <br/> <br/> 
-                    <img src = "img/model.png">
-                    
             </div>
-     </center>
 
-     </div>
-             
-         
+        </div>
         <!-- /.container -->
 
     </div>
-    <!-- /.content-section-a -->
-    
-    <center>
-    <div class="content-section-a">
-            <div class="container">
-            
-                   <center> <h2 class="section-heading">Requètes SQL</h2> </center>
-                   
-                    <p class="lead">Les requètes ont été ajoutées sur une autre page du site qui leur est entièrement consacrée afin d'y voir plus clair !<br/>
-                    <center> Cliquez sur le faucheur ahuri ci-dessous pour y accéder. </center>
-                    <br/>
-                    <a href="Requests"><img width = 327 height = 541 src="img/reaper.png" alt="Lien vers les requètes SQL"/></a>    <br/> <br/> 
+    <!-- /.content-section-b -->
 
-                    
-            </div>
-     </center>
-
-     </div>
 
 	<a  name="contact"></a>
     <div class="banner">
@@ -207,7 +142,7 @@
 
             <div class="row">
                 <div class="col-lg-6">
-                   
+                    <h2>Connect to Start Bootstrap:</h2>
                 </div>
                 <div class="col-lg-6">
                     <ul class="list-inline banner-social-buttons">
@@ -215,13 +150,11 @@
                             <a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
                         </li>
                         <li>
-                        
                             <a href="https://github.com/IronSummitMedia/startbootstrap" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
                         </li>
                         <li>
                             <a href="#" class="btn btn-default btn-lg"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name">Linkedin</span></a>
                         </li>
-                        <h3>Suivez nous sur les différentes plateformes !</h3>
                     </ul>
                 </div>
             </div>
@@ -230,38 +163,35 @@
         <!-- /.container -->
 
     </div>
-    
     <!-- /.banner -->
 
     <!-- Footer -->
-    <center>
     <footer>
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <ul class="list-inline">
                         <li>
-                            <a href="#">Accueil</a>
+                            <a href="#">Home</a>
                         </li>
                         <li class="footer-menu-divider">&sdot;</li>
                         <li>
-                            <a href="#about">A propos de nous</a>
+                            <a href="#about">About</a>
                         </li>
                         <li class="footer-menu-divider">&sdot;</li>
                         <li>
-                            <a href="#services">Données et schéma</a>
+                            <a href="#services">Services</a>
                         </li>
                         <li class="footer-menu-divider">&sdot;</li>
                         <li>
                             <a href="#contact">Contact</a>
                         </li>
                     </ul>
-
+                   
                 </div>
             </div>
         </div>
     </footer>
-       </center>
 
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
