@@ -126,7 +126,7 @@
                     <p class="lead">Ce site web a été crée dans le cadre du cours du DSB en deuxième année de licence, a l'ISTIC. Il a été réalisé en <b>XHTML</b>, <b>PHP</b> et <b>MySQL</b>
                     Nous avons rempli manuellement nos tables SQL à partir des informations récupérées sur le site <a href="https://overwatch.gamepedia.com/Overwatch_Wiki">Overwatch Wiki</a>
                     
-                    en rapport avec le jeu vidéo de Blizzard: Overwatch. </p>
+                    en rapport avec le jeu vidéo de Blizzard : Overwatch. </p>
                     
                   
               

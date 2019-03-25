@@ -146,7 +146,6 @@ else
             <h2 class="section-heading">L'identification n'a pas fonctionné ! </h2>
             <p class="lead">Nom de compte ou mot de passe incorect.</p><br/>
             <img src ="http://image.noelshack.com/fichiers/2017/22/1496600487-weedowmaker.png">
-            <img src ="<img src ="http://image.noelshack.com/fichiers/2017/22/1496600487-weedowmaker.png">">
 
        <?php
 }  ?>
@@ -196,7 +195,7 @@ else
                         </li>
                         <li>
                         
-                            <a href="https://github.com/IronSummitMedia/startbootstrap" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
+                            <a href="https://github.com/Skinz3" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
                         </li>
                         <li>
                             <a href="#" class="btn btn-default btn-lg"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name">Linkedin</span></a>

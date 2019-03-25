@@ -159,7 +159,11 @@
                     <br/>
                     <h4 class="section-heading"><u>Jointure</u></h4>
                     <p> L'intérêt d'une jointure est de pouvoir créer des liens entre deux tables différentes.<br/> Nous allons donc nous servir des tables 'weapons' et 'characters' :</p>
-                    <img src = "https://i.imgur.com/t0LS0Wm.png"/><img src ="https://puu.sh/D4i1t/286b3ac322.png"><br/>
+                    <table>
+                    <td><img src = "https://i.imgur.com/t0LS0Wm.png"/></td>
+                    <td><br/></td>
+                    <td><img src ="https://puu.sh/D4i1t/286b3ac322.png"></td>
+                    </table><br/>
                     <p> Nous écrivons la requète suivante : <table border = "1" cellspacing="1" cellpadding="1"><tr><td><div align=center> SELECT * FROM weapons NATURAL JOIN characters </div></td><tr></table><br/>
                     qui créé une nouvelle table contenant les colonnes de mêmes noms et types dans les deux tables.
                     <br/>
@@ -171,22 +175,32 @@
                     <p> On retrouve ici plusieurs fois le même Username, on cherche donc à savoir combien de Lootbox au total chacun a acheté.
                     <p> Nous écrivons la requète suivante : <table border = "1" cellspacing="1" cellpadding="1"><tr><td><div align=center>SELECT Username, SUM(LootboxNumber) FROM purchases GROUP BY Username</div></td><tr></table><br/>
                     </p>
-                    <br/><br/>
+                    <br/>
+                    <p> Nous obtenons alors les usernames avec le nombre total de lootbox qu'ils ont respectivement achetées.
                     
                     
                     <table  border ="1" cellspacing="1" cellpadding="1"><tr><td><div align=center>
                     <tr>
-                         <th >AverageFirerate</th>
+                         <th >Username</th>
+                         <th>LootboxCount</th>
                     </tr>
                     <td>
                     <?php 
                     
-                    $result = $bdd->query("SELECT AVG( Firerate ) AS AverageFireRate FROM weapons");
-                    $row = $result->fetch();
-                    echo($row['AverageFireRate'])
-
+                    $result = $bdd->query("SELECT Username, SUM(LootboxNumber) AS LootboxNumber  FROM purchases GROUP BY Username");
+                    while ($row = $result->fetch())
+                    {
+                        echo("<tr>");
+                        echo("<td>".$row['Username']."</td>");
+                        echo("<td>".$row['LootboxNumber']."</td>");
+                        echo("</tr>");
+                    }
+                    
+                     
+                   // echo($row['lootboxNumber'])
+                    
                     ?>
-
+                  
 
 
 
@@ -244,10 +258,10 @@
                         </li>
                         <li>
                         
-                            <a href="https://github.com/IronSummitMedia/startbootstrap" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
+                            <a href="http://github.com/Limoelou" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
                         </li>
                         <li>
-                            <a href="#" class="btn btn-default btn-lg"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name">Linkedin</span></a>
+                            <a href="https://www.linkedin.com/in/louis-robert-2b4525183/" class="btn btn-default btn-lg"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name">Linkedin</span></a>
                         </li>
                         <h3>Suivez nous sur les différentes plateformes !</h3>
                     </ul>
