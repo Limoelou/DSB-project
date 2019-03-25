@@ -143,8 +143,11 @@ if (isset($_SESSION['account']))
 else
 {
     ?>
-            <h2 class="section-heading">L'identification n'a pas fonctionée! </h2>
-            <p class="lead">Nom de compte ou mot de passe incorect.</p>
+            <h2 class="section-heading">L'identification n'a pas fonctionné ! </h2>
+            <p class="lead">Nom de compte ou mot de passe incorect.</p><br/>
+            <img src ="http://image.noelshack.com/fichiers/2017/22/1496600487-weedowmaker.png">
+            <img src ="<img src ="http://image.noelshack.com/fichiers/2017/22/1496600487-weedowmaker.png">">
+
        <?php
 }  ?>
    
@@ -189,7 +192,7 @@ else
                 <div class="col-lg-6">
                     <ul class="list-inline banner-social-buttons">
                         <li>
-                            <a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
+                            <a href="https://twitter.com/Limoelou1" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
                         </li>
                         <li>
                         
