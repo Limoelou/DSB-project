@@ -19,7 +19,7 @@ if ($settings['ShowErrors'] == false)
 
 try
 {
-	$bdd = new PDO ('mysql:host='.$settings['host_bdd'].';dbname='.$settings['name_bdd'].'',
+	$bdd = new PDO('mysql:host='.$settings['host_bdd'].';dbname='.$settings['name_bdd'].'',
 	$settings['user_bdd'], $settings['mdp_bdd'], array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 	$bdd->query('SET NAMES utf8');
 }

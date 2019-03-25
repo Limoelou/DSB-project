@@ -119,6 +119,9 @@ if (isset($_SESSION['account']))
     ?>  
 
     <center>
+
+
+  
           <div class="clearfix"></div>
           <h2 class="section-heading">Mon compte</h2>
          <p> Nom de compte : <?php echo($_SESSION['account']['Username']) ?>
@@ -129,7 +132,7 @@ if (isset($_SESSION['account']))
          <p> Mon rang : <?php echo($_SESSION['account']['Rank']) ?>
         <br>
         <form id="formPost" method="POST" action="" accept-charset="UTF-8"><input 
-                   <input type="submit" role="button"  name="logout" id="logout" value="Déconnexion">
+                   <input type="submit"  class="btn btn-default" role="button"  name="logout" id="logout" value="Déconnexion">
 		</form>
         
 </center>
