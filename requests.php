@@ -153,12 +153,22 @@
                     echo($row['AverageFireRate'])
 
                     ?>
+                    </td></table>    
                     <br/>
-                    </td></table>       <h4 class="section-heading"><u>Jointure</u></h4>
-                    <p> L'intérêt d'une jointure est de pouvoir créer des liens entre deux attributs de deux tables différentes.<br/> Nous allons donc nous servir des tables 'weapons' et 'characters' :</p>
+                    <h4 class="section-heading"><u>Jointure</u></h4>
+                    <p> L'intérêt d'une jointure est de pouvoir créer des liens entre deux tables différentes.<br/> Nous allons donc nous servir des tables 'weapons' et 'characters' :</p>
                     <img src = "https://i.imgur.com/t0LS0Wm.png"/><img src ="https://puu.sh/D4i1t/286b3ac322.png"><br/>
-                    <p> Nous écrivons la requète suivante : <table border = "1" cellspacing="1" cellpadding="1"><tr><td><div align=center> ALTER TABLE `characters` ADD FOREIGN KEY ( 'WeaponId' ) REFERENCES 'base_17004654'.'weapons' ('Id') ON DELETE RESTRICT ON UPDATE RESTRICT </div></td><tr></table><br/>
-                    qui associe l'attribut 'WeaponId' de la table 'Characters' à la clé primaire 'Id' de la table 'weapons'. Celà permet d'associer chaque personnage à une arme.
+                    <p> Nous écrivons la requète suivante : <table border = "1" cellspacing="1" cellpadding="1"><tr><td><div align=center> SELECT * FROM weapons NATURAL JOIN characters </div></td><tr></table><br/>
+                    qui créé une nouvelle table contenant les colonnes de mêmes noms et types dans les deux tables.
+                    <br/>
+                    
+              
+                    <h4 class="section-heading"><u>Group by</u></h4>
+                    <p>Le group by est une requète SQL intéressante lorsqu'on retrouve plusieurs fois une même entrée dans une table, celà permet de regrouper les données correspondant à cette entrée (par exemple) <br/> Nous allons ici nous servir de notre table purchases :</p>
+                    <img src = "https://i.imgur.com/WnL7Q2G.png"/><br/>
+                    <p> On retrouve ici plusieurs fois le même Username, on cherche donc à savoir combien de Lootbox au total chacun a acheté.
+                    <p> Nous écrivons la requète suivante : <table border = "1" cellspacing="1" cellpadding="1"><tr><td><div align=center>SELECT Username, SUM(LootboxNumber) FROM purchases GROUP BY Username</div></td><tr></table><br/>
+                    </p>
                     <br/><br/>
                     
                     
@@ -174,6 +184,8 @@
                     echo($row['AverageFireRate'])
 
                     ?>
+
+
 
 
                     </div></td><tr></table><br/></td>
