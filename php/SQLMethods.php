@@ -12,7 +12,6 @@ function createXML($db)
 {
   $my_file = 'database.xml';
   unlink($my_file);
-  $my_file = 'database.xml';
   $handle = fopen($my_file, 'a') or die('Cannot open file:  '.$my_file);
 
 
