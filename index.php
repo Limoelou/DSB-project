@@ -141,6 +141,7 @@
     </div>
     <!-- /.content-section-a -->
     <center>
+    <a  name="data"></a>
     <div class="content-section-a">
             <div class="container">
             
@@ -242,7 +243,10 @@
                 <div class="col-lg-12">
                     <ul class="list-inline">
                         <li>
-                            <a href="#">Accueil</a>
+                            <a href="index.php#">Accueil</a>
+                        </li>
+                        <li>
+                            <a href="#">Haut de page</a>
                         </li>
                         <li class="footer-menu-divider">&sdot;</li>
                         <li>

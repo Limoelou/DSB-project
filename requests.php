@@ -268,16 +268,19 @@
             <div class="row">
                 <div class="col-lg-12">
                     <ul class="list-inline">
-                        <li>
-                            <a href="#">Accueil</a>
+                         <li class="footer-menu-divider">&sdot;</li>
+                            <a href="index.php#">Accueil</a>
+                        </li>
+                        <li class="footer-menu-divider">&sdot;</li>
+                            <a href="#">Haut de page</a>
                         </li>
                         <li class="footer-menu-divider">&sdot;</li>
                         <li>
-                            <a href="#about">A propos de nous</a>
+                            <a href="index.php#services">A propos de nous</a>
                         </li>
                         <li class="footer-menu-divider">&sdot;</li>
                         <li>
-                            <a href="#services">Données et schéma</a>
+                            <a href="index.php#data">Données et schéma</a>
                         </li>
                         <li class="footer-menu-divider">&sdot;</li>
                         <li>
