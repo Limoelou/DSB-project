@@ -5,6 +5,13 @@
    require_once ('php/config.php');
    require_once ('php/SQLMethods.php');
    session_start();
+
+
+    if (isset($_SESSION['account']) == true)
+    {
+        echo('<i class="fa fa-times close"></i><meta http-equiv="refresh" content="0; URL=account.php">');
+        exit;
+    }
 ?>
 <head>
 
