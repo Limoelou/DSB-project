@@ -41,20 +41,30 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand topnav" href="#">Start Bootstrap</a>
+                <a class="navbar-brand topnav" href="#">Project DSB</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="#about">About</a>
+            
+                     <li>
+                        <a href="index.php">Accueil</a>
                     </li>
                     <li>
-                        <a href="#services">Services</a>
+                        <a href="requests.php">Requêtes</a>
                     </li>
+
+                    <?php if (isset($_SESSION['account'])) {  ?>
                     <li>
-                        <a href="#contact">Contact</a>
+                    <a href="account.php">Mon compte</a>
+                      
                     </li>
+                    <?php } else {  ?>
+                        <li>
+                        <a href="authentification.php">Se connecter</a>
+                        </li>
+                    <?php } ?>
+
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -67,15 +77,7 @@
     <a name="about"></a>
     <div class="intro-header">
         <div class="container">
-            <img src="https://www.freepnglogos.com/uploads/overwatch-logo-png-format-9.png" >
-
-
-            
-              
-                
-           
-          
-
+            <img src="img/logo.png" >
         </div>
         <!-- /.container -->
 
@@ -99,21 +101,52 @@ if(isset($_GET['username']))
     $password =  $_GET['password'];
 
     $account = getAccount($bdd,$username);
-
+   
     if ($account['Password'] == $password)
     {
-        $_SESSION = $account;
+        $_SESSION['account'] = $account;
     }
-
-    echo('connecté');
 }
+
+if (isset($_SESSION['account']))
+{
+
+    if(isset($_POST['logout']))
+	{
+		session_destroy();
+		echo('<i class="fa fa-times close"></i><meta http-equiv="refresh" content="0; URL=index.php">');
+	}
+    ?>  
+
+    <center>
+          <div class="clearfix"></div>
+          <h2 class="section-heading">Mon compte</h2>
+         <p> Nom de compte : <?php echo($_SESSION['account']['Username']) ?>
+         <p> Mot de passe : <?php echo($_SESSION['account']['Password']) ?>
+         <p> Mes Lootbox : <?php echo($_SESSION['account']['Lootbox']) ?>
+         <p> Mes Pièces : <?php echo($_SESSION['account']['Gold']) ?>
+         <p> Mon niveau : <?php echo($_SESSION['account']['Level']) ?>
+         <p> Mon rang : <?php echo($_SESSION['account']['Rank']) ?>
+        <br>
+        <form id="formPost" method="POST" action="" accept-charset="UTF-8"><input 
+                   <input type="submit" role="button"  name="logout" id="logout" value="Déconnexion">
+		</form>
+        
+</center>
+
+
+<?php }
 else
 {
-    echo("Nom decompte ou mdp incorect");
-}
+    ?>
     
+    
+    
+       <?php
+}  ?>
+   
 
-         ?>
+        
            
            
 

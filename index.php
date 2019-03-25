@@ -1,4 +1,9 @@
 <!DOCTYPE html>
+<?php
+   require_once ('php/config.php');
+   require_once ('php/SQLMethods.php');
+   session_start();
+?>
 <html lang="en">
 
 <head>
@@ -43,23 +48,31 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand topnav" href="#">Start Bootstrap</a>
+                <a class="navbar-brand topnav" href="#">Project DSB</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
             
-                    <li>
-                        <a href="requests.php">Requètes</a>
+                     <li>
+                        <a href="index.php">Accueil</a>
                     </li>
                     <li>
-                        <a href="auth.php">Authentification</a>
+                        <a href="requests.php">Requêtes</a>
                     </li>
+
+                    <?php if (isset($_SESSION['account'])) {  ?>
                     <li>
-                        <a href="#contact">Contact</a>
+                    <a href="account.php">Mon compte</a>
+                      
                     </li>
-                
+                    <?php } else {  ?>
+                        <li>
+                        <a href="authentification.php">Se connecter</a>
+                        </li>
+                    <?php } ?>
+
                 </ul>
             </div>
             
@@ -73,7 +86,7 @@
     <a name="about"></a>
     <div class="intro-header">
         <div class="container">
-            <img src="https://www.freepnglogos.com/uploads/overwatch-logo-png-format-9.png" >
+            <img src="img/logo.png" >
 
                 
         
