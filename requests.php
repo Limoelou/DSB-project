@@ -191,7 +191,13 @@
                     qui retourne les utilisateurs ayant acheté plus de 19 lootboxes en une seule fois :  <a href="<?php echo(createQuery("SELECT DISTINCT Username, LootboxNumber, Date FROM purchases WHERE LootboxNumber >19 LIMIT 0 , 30")) ?>">Voir le résulat</a>
                     </p>
                     
+                    <form action="sql.php">
+                            Requête: <input type="text" name="request" value="SELECT * from account"><br>
 
+                            <br>
+                    <button type="submit" class="btn btn-default">Executer</button>
+
+                    </form>
 
 
 
