@@ -36,7 +36,7 @@ function createXML($db)
 
   $dom = new DOMDocument;
   $dom->load('database.xml');
- // $dom->validate();
+ // $dom->validate(); todo loule
 }
 
 function appendTable($db,$xml,$tableName)

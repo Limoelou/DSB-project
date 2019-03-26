@@ -95,7 +95,6 @@
 
 
 
-
 if(isset($_GET['username']))
 {
     $username = $_GET['username'];
@@ -122,16 +121,25 @@ if (isset($_SESSION['account']))
     <center>
 
 
+ 
+
   
           <div class="clearfix"></div>
+         
+       
+         
           <h2 class="section-heading">Mon compte</h2>
-         <p> Nom de compte : <?php echo($_SESSION['account']['Username']) ?>
-         <p> Mot de passe : <?php echo($_SESSION['account']['Password']) ?>
-         <p> Mes Lootbox : <?php echo($_SESSION['account']['Lootbox']) ?>
-         <p> Mes Pièces : <?php echo($_SESSION['account']['Gold']) ?>
-         <p> Mon niveau : <?php echo($_SESSION['account']['Level']) ?>
-         <p> Mon rang : <?php echo($_SESSION['account']['Rank']) ?>
+         <p> Nom de compte : <?php echo($_SESSION['account']['Username']) ?> </p>
+         <p> Mot de passe : <?php echo($_SESSION['account']['Password']) ?> </p>
+         <p> Mes Lootbox : <?php echo($_SESSION['account']['Lootbox']) ?> </p>  
+         <p> Mes Pièces : <?php echo($_SESSION['account']['Gold']) ?> </p>
+         <p> Mon niveau : <?php echo($_SESSION['account']['Level']) ?> </p>
+         <p> Mon rang : <?php echo('<img src ="img/Ranks/'.$_SESSION["account"]["Rank"].'.png">') ?>  </p>
         <br>
+
+       
+
+
         <form id="formPost" method="POST" action="" accept-charset="UTF-8"><input 
                    <input type="submit"  class="btn btn-default" role="button"  name="logout" id="logout" value="Déconnexion">
 		</form>
