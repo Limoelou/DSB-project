@@ -119,6 +119,7 @@
   <thead>
     <tr>
     <?php 
+
 $data = $result->fetchAll();
 $fields = array_keys($data[0]);
 
@@ -135,17 +136,15 @@ foreach ($fields as $value)
 ?>
      
      
-    </tr>
+   </tr>
   </thead>
   <tbody>
 
   <?php 
   
-   foreach($data as $row) { 
-   
-    
+   foreach($data as $row) 
+   { 
      echo('<tr>');
- 
      foreach ($fields as $value)
      {
          echo('<td>'.$row[$value].'</td>');
@@ -159,10 +158,8 @@ foreach ($fields as $value)
              
 
         </div>
-        <!-- /.container -->
 
     </div>
-    <!-- /.content-section-a -->
 
     <div class="content-section-b">
 
@@ -176,14 +173,8 @@ foreach ($fields as $value)
             </div>
 
         </div>
-        <!-- /.container -->
 
     </div>
-    <!-- /.content-section-b -->
-
-        
-        <!-- /.container -->
-
 
         <a  name="contact"></a>
     <div class="banner">
@@ -212,13 +203,10 @@ foreach ($fields as $value)
             </div>
 
         </div>
-        <!-- /.container -->
+
 
     </div>
-    
-    <!-- /.banner -->
 
-    <!-- Footer -->
     <center>
     <footer>
         <div class="container">
@@ -251,10 +239,8 @@ foreach ($fields as $value)
     </footer>
        </center>
 
-    <!-- jQuery -->
     <script src="js/jquery.js"></script>
 
-    <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
 
 </body>
