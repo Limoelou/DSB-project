@@ -90,13 +90,13 @@
     <div class="content-section-a">
 
         <div class="container">
-                        <center>
-        <?php echo(createXML($bdd)); ?>
+        <center>
+          <?php echo(createXML($bdd)); ?>
 
-        <h2 class="section-heading">Génération XML terminée!</h2>
+          <h2 class="section-heading">Génération XML terminée!</h2>
             <p> La base de donnée vient d'être générée au format XML en temps réel grâce a la fonction <i>createXML($bdd)</i>
             dans le fichier SQLMethods.php </p> 
-         <a href="database.xml" class="btn btn-default">Télécharger le fichier XML</a>
+          <a href="database.xml" class="btn btn-default">Télécharger le fichier XML</a>
 
         </div>
 
