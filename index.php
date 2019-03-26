@@ -128,7 +128,7 @@
                     
                     en rapport avec le jeu vidéo de Blizzard : Overwatch. </p>
                     
-                  <a href="sql.php?request=SELECT+*+FROM+ACCOUNTS">Click</a>
+                
               
                  </center>
               

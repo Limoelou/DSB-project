@@ -89,53 +89,78 @@
 	<a  name="services"></a>
     <div class="content-section-a">
 
-        <div class="container">
-          
-          <?php 
+    <?php 
            
            if(isset($_GET['request']))
            {
               $request = $_GET['request'];
-              
+             
               $result = $bdd->query($request);
-
-              echo(implode(array_keys($result->fetch())));
-
-
-             /* <table style="width:100%">
-              <tr>
-                <th>Firstname</th>
-                <th>Lastname</th>
-                <th>Age</th>
-              </tr>
-              <tr>
-                <td>Jill</td>
-                <td>Smith</td>
-                <td>50</td>
-              </tr>
-              <tr>
-                <td>Eve</td>
-                <td>Jackson</td>
-                <td>94</td>
-              </tr>
-            </table>  */
-              echo('</br>');
-              while ($row = $result->fetch())
-              {
-                    
-                    echo(implode("   ",array_unique($row)));
-                     
-                       echo('</br>');   
-                        
-               }
+              $num_rows = $result->rowCount();
+           
            }
            else
            {
-                echo("No request");
+                echo('Aucune requête...');
+                exit;
            }
 
 
-    ?>
+ ?>
+
+        <div class="container">
+           <div class="clearfix"></div>
+                    <h2 class="section-heading">Voici les résultat de votre requête:</h2>
+                    <p><i> <?php echo($request)  ?></i> </p>
+                    <p><i><?php echo($num_rows) ?> résultat.</i></p>
+        
+<table class="table">
+  <thead>
+    <tr>
+    <?php 
+
+$fields = array_keys($result->fetch());
+
+
+foreach ($fields as $key => $val) // for some reason, MySQL return numbers for each columns
+{
+    if (is_numeric($val)) 
+        unset($fields[$key]);
+}
+
+foreach ($fields as $value)
+{
+    echo('<th scope="col">'.$value.'</th>');
+}
+?>
+     
+     
+    </tr>
+  </thead>
+  <tbody>
+
+  <?php 
+    echo("Le nombre de rows:".$result->rowCount());
+   $data = $result->fetchAll();
+   
+   foreach($data as $row) 
+   {
+
+     echo('<tr>');
+
+     foreach ($fields as $value)
+     {
+         echo('<td>'.$row[$value].'</td>');
+     }
+     
+
+    echo('</tr>');
+   }
+?>
+  </tbody>
+</table>
+          
+             
 
         </div>
         <!-- /.container -->

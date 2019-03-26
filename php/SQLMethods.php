@@ -7,7 +7,11 @@ function getAccount($bdd,$username)
 	$row = $result->fetch();
 	return $row;
 }
-
+function createQuery($query)
+{
+   $formatedQuery = str_replace(" ","+",$query);
+   return "sql.php?request=".$formatedQuery;
+}
 function createXML($db)
 {
   $my_file = 'database.xml';
