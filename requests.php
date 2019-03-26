@@ -5,7 +5,50 @@
    require_once ('php/config.php');
    require_once ('php/SQLMethods.php');
    session_start();
-?>
+             
+   if(isset($_GET['request']))
+   {
+      $request = $_GET['request'];
+      
+      $result = $bdd->query($request);
+
+      echo(implode(array_keys($result->fetch())));
+
+
+     /* <table style="width:100%">
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Age</th>
+      </tr>
+      <tr>
+        <td>Jill</td>
+        <td>Smith</td>
+        <td>50</td>
+      </tr>
+      <tr>
+        <td>Eve</td>
+        <td>Jackson</td>
+        <td>94</td>
+      </tr>
+    </table>  */
+      echo('</br>');
+      while ($row = $result->fetch())
+      {
+            
+            echo(implode("   ",array_unique($row)));
+             
+               echo('</br>');   
+                
+       }
+   }
+   else
+   {
+        echo("No request");
+   }
+
+
+   ?>
 <head>
 
     <meta charset="utf-8">
@@ -102,60 +145,16 @@
                     <p>Nous cherchons à renvoyer certains attributs des insertions remplissant les conditions de la sélection. <br/>Notre table 'Characters' est la suivante :</p>
                     <img src="https://puu.sh/D4i1t/286b3ac322.png" /><br/>
                     <p> Nous écrivons la requète suivante : <table  border ="1" cellspacing="1" cellpadding="1"><tr><td><div align=center>SELECT Id,Name from Characters where LifePoints == 200</div></td><tr></table>
-                    <br/> qui renvoie une table avec les colonnes 'Id' et 'Name' des insertions dont la valeur de la colonne 'LifePoints' est égale à 200 : <br/>
+                    <br/> qui renvoie une table avec les colonnes 'Id' et 'Name' des insertions dont la valeur de la colonne 'LifePoints' est égale à 200 : <a href="<?php echo(createQuery("SELECT Id,Name from Characters where LifePoints = 200")) ?>">Voir le résulat</a>
                     <br/>
 
-              
-                    <table border="1" >
-
-                    <tr>
-                         <th >Id</th>
-                        <th >Nom</th>
-                    </tr>
-
-
-                
-                    <?php 
-                    
-                    $result = $bdd->query("SELECT Id,Name from Characters where LifePoints = 200");
-                 
-                   
-                    while ($row = $result->fetch())
-                    {
-                        echo("<tr>");
-                        echo("<td>".$row['Id']."</td>");
-                        echo("<td>".$row['Name']."</td>");
-                        echo("</tr>");
-                    }
-                   
-                    ?>
-                
-
-
-                    </table>
-                   
                     <h4 class="section-heading"><u>Moyenne</u></h4>
                     <p>Le but ici est de retourner la moyenne des valeurs d'une des colonnes. <br/> Notre table 'Weapons' est la suivante :</p>
                     <img src = "https://i.imgur.com/t0LS0Wm.png"/><br/>
                     <p> Nous écrivons la requète suivante : <table border = "1" cellspacing="1" cellpadding="1"><tr><td><div align=center> SELECT AVG( Firerate ) AS AverageFirerate FROM weapons </div></td><tr></table><br/>
-                    qui créé une nouvelle colonne 'AverageFirerate' et y inscrit la moyenne des valeurs rentrées dans la colonne 'Firerate' de la table 'Weapons'.
+                    qui créé une nouvelle colonne 'AverageFirerate' et y inscrit la moyenne des valeurs rentrées dans la colonne 'Firerate' de la table 'Weapons' :  <a href="<?php echo(createQuery("SELECT AVG( Firerate ) AS AverageFirerate FROM weapons")) ?>">Voir le résulat</a>
                     </p>
-                    <br/><br/>
-                    
-                    
-                    <table  border ="1" cellspacing="1" cellpadding="1"><tr><td><div align=center>
-                    <tr>
-                         <th >AverageFirerate</th>
-                    </tr>
-                    <td>
-                    <?php 
-                    
-                    $result = $bdd->query("SELECT AVG( Firerate ) AS AverageFireRate FROM weapons");
-                    $row = $result->fetch();
-                    echo($row['AverageFireRate'])
-
-                    ?>
-                    </td></table>    
+            
                     <br/>
                     <h4 class="section-heading"><u>Jointure</u></h4>
                     <p> L'intérêt d'une jointure est de pouvoir créer des liens entre deux tables différentes.<br/> Nous allons donc nous servir des tables 'weapons' et 'characters' :</p>
@@ -165,24 +164,9 @@
                     <td><img src ="https://puu.sh/D4i1t/286b3ac322.png"></td>
                     </table><br/>
                     <p> Nous écrivons la requète suivante : <table border = "1" cellspacing="1" cellpadding="1"><tr><td><div align=center> SELECT * FROM weapons INNER JOIN characters </div></td><tr></table><br/>
-                    qui créé une nouvelle table contenant les colonnes de mêmes noms et types dans les deux tables.
+                    qui créé une nouvelle table contenant les colonnes de mêmes noms et types dans les deux tables : <a href="<?php echo(createQuery("SELECT * FROM weapons INNER JOIN characters")) ?>">Voir le résulat</a>
                     <br/>
 
-                    <p> Voici le résultat: </p>
-
-                  
-                     <?php 
-                    
-                /*   $result = $bdd->query("SELECT * FROM weapons INNER JOIN characters");
-                     while ($row = $result->fetch())
-                     {
-                        echo("<tr>");
-                        echo("<td>".$row['Username']."</td>");
-                        echo("<td>".$row['LootboxNumber']."</td>");
-                        echo("</tr>");
-                     } */
-                     ?>
-              
                     <h4 class="section-heading"><u>Group by</u></h4>
                     <p>Le group by est une requète SQL intéressante lorsqu'on retrouve plusieurs fois une même entrée dans une table, celà permet de regrouper les données correspondant à cette entrée (par exemple) <br/> Nous allons ici nous servir de notre table purchases :</p>
                     <img src = "https://i.imgur.com/WnL7Q2G.png"/><br/>
@@ -190,92 +174,22 @@
                     <p> Nous écrivons la requète suivante : <table border = "1" cellspacing="1" cellpadding="1"><tr><td><div align=center>SELECT Username, SUM(LootboxNumber) FROM purchases GROUP BY Username</div></td><tr></table><br/>
                     </p>
                     <br/>
-                    <p> Nous obtenons alors les usernames avec le nombre total de lootbox qu'ils ont respectivement achetées.
+                    <p> Nous obtenons alors les usernames avec le nombre total de lootbox qu'ils ont respectivement achetées :  <a href="<?php echo(createQuery("SELECT Username, SUM(LootboxNumber) AS LootboxNumber FROM purchases GROUP BY Username")) ?>">Voir le résulat</a>
                     
-                    
-                    <table  border ="1" cellspacing="1" cellpadding="1"><tr><td><div align=center>
-                    <tr>
-                         <th >Username</th>
-                         <th>LootboxCount</th>
-                    </tr>
-                    <td>
-                    <?php 
-                    
-                    $result = $bdd->query("SELECT Username, SUM(LootboxNumber) AS LootboxNumber  FROM purchases GROUP BY Username");
-                    while ($row = $result->fetch())
-                    {
-                        echo("<tr>");
-                        echo("<td>".$row['Username']."</td>");
-                        echo("<td>".$row['LootboxNumber']."</td>");
-                        echo("</tr>");
-                    }
-                    ?>
-                    </td></table>
                     <br/>
                       <h4 class="section-heading"><u>Différence</u></h4>
                     <p> Utile ici lorsque l'on cherche à retourner une table sans certaines valeurs d'un ou plusieurs attributs sous certaines conditions. <br/> Notre table 'maps' est la suivante :</p>
                     <img src = "https://i.imgur.com/st6AMdu.png"/><br/>
-                    <p> Nous écrivons la requète suivante : <table border = "1" cellspacing="1" cellpadding="1"><tr><td><div align=center> SELECT Name, Type FROM maps map1 WHERE  map1.Type NOT IN (SELECT Type FROM maps map2 WHERE Type =! "Escort") </div></td><tr></table><br/>
-                    qui créé une nouvelle instance de la table 'maps' appelée map1 sans les cartes qui sont des escortes.
-                    </p>
-                    <br/>
-                    
-                    
-                    <table  border ="1" cellspacing="1" cellpadding="1"><tr><td><div align=center>
-                    <tr> 
-                    <p>map1</p>
-                    <tr>
-                         <th>Name</th>
-                         <th>Type</th>
-                    </tr>
-                    </tr>
-                    <td>
-                    <?php 
-                    
-                    $result = $bdd->query("SELECT Name, Type FROM maps map1 WHERE  map1.Type NOT IN (SELECT Type FROM maps map2 WHERE Type = 'Escort')");
-                    $row = $result->fetch();
-                    while ($row = $result->fetch())
-                    {
-                        echo("<tr>");
-                        echo("<td>".$row['Name']."</td>");
-                        echo("<td>".$row['Type']."</td>");
-                        echo("</tr>");
-                    }
-                    ?>
-                    </td></table>    
+                    <p> Nous écrivons la requète suivante : <table border = "1" cellspacing="1" cellpadding="1"><tr><td><div align=center> SELECT Name, Type FROM maps map1 WHERE  map1.Type NOT IN (SELECT Type FROM maps map2 WHERE Type = 'Escort')) </div></td><tr></table><br/>
+                    qui créé une nouvelle instance de la table 'maps' appelée map1 sans les cartes qui sont des escortes :  <a href="<?php echo(createQuery("SELECT Name, Type FROM maps map1 WHERE  map1.Type NOT IN (SELECT Type FROM maps map2 WHERE Type = 'Escort')")) ?>">Voir le résulat</a>
+                    </p>  
+
                     <br/>
                     <h4 class="section-heading"><u>Division</u></h4>
                     <p> La division est utile lorsqu'on veut retourner les insertions qui remplissent des conditions précises. </p>
                     <p> D'après la table 'purchases' vue précedemment, nous écrivons la requète suivante : <table border = "1" cellspacing="1" cellpadding="1"><tr><td><div align=center>SELECT DISTINCT Username, LootboxNumber, Date FROM purchases WHERE LootboxNumber >19 LIMIT 0 , 30 </div></td><tr></table><br/>
-                    qui retourne les utilisateurs ayant acheté plus de 19 lootboxes en une seule fois.
+                    qui retourne les utilisateurs ayant acheté plus de 19 lootboxes en une seule fois :  <a href="<?php echo(createQuery("SELECT DISTINCT Username, LootboxNumber, Date FROM purchases WHERE LootboxNumber >19 LIMIT 0 , 30")) ?>">Voir le résulat</a>
                     </p>
-                    <br/>
-                    
-                    
-                    <table  border ="1" cellspacing="1" cellpadding="1"><tr><td><div align=center>
-                    <tr>
-                         <th>Username</th>
-                         <th>Date</th>
-                         <th>LootboxNumber</th>
-                         
-                    </tr>
-                    </tr>
-                    <td>
-                    <?php 
-                    
-                    $result = $bdd->query("SELECT DISTINCT Username, Date, LootboxNumber FROM purchases WHERE LootboxNumber >19 LIMIT 0,30");
-                  
-                   while ($row = $result->fetch())
-                    {
-                        echo("<tr>");
-                        echo("<td>".$row['Username']."</td>");
-                        echo("<td>".$row['Date']."</td>");
-                        echo("<td>".$row['LootboxNumber']."</td>");
-                        
-                        echo("</tr>");
-                    }
-                    ?>
-                    </td></table>  
                     
 
 
