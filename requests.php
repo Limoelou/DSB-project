@@ -195,12 +195,43 @@
                         echo("<td>".$row['LootboxNumber']."</td>");
                         echo("</tr>");
                     }
-                    
-                     
-                   // echo($row['lootboxNumber'])
-                    
                     ?>
-                  
+                    </td></table>
+                    <br/>
+                      <h4 class="section-heading"><u>Différence</u></h4>
+                    <p> Utile ici lorsque l'on cherche à retourner une table sans certaines valeurs d'un ou plusieurs attributs sous certaines conditions. <br/> Notre table 'maps' est la suivante :</p>
+                    <img src = "https://i.imgur.com/st6AMdu.png"/><br/>
+                    <p> Nous écrivons la requète suivante : <table border = "1" cellspacing="1" cellpadding="1"><tr><td><div align=center> SELECT Name, Type FROM maps map1 WHERE  map1.Type NOT IN (SELECT Type FROM maps map2 WHERE Type =! "Escort") </div></td><tr></table><br/>
+                    qui créé une nouvelle instance de la table 'maps' appelée map1 sans les cartes qui sont des escortes.
+                    </p>
+                    <br/>
+                    
+                    
+                    <table  border ="1" cellspacing="1" cellpadding="1"><tr><td><div align=center>
+                    <tr> 
+                    <p>map1</p>
+                    <tr>
+                         <th>Name</th>
+                         <th>Type</th>
+                    </tr>
+                    </tr>
+                    <td>
+                    <?php 
+                    
+                    $result = $bdd->query("SELECT Name, Type FROM maps map1 WHERE  map1.Type NOT IN (SELECT Type FROM maps map2 WHERE Type = 'Escort')");
+                    $row = $result->fetch();
+                    while ($row = $result->fetch())
+                    {
+                        echo("<tr>");
+                        echo("<td>".$row['Name']."</td>");
+                        echo("<td>".$row['Type']."</td>");
+                        echo("</tr>");
+                    }
+                    ?>
+                    </td></table>    
+                    <br/>
+                    
+
 
 
 
