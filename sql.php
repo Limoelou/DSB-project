@@ -114,6 +114,10 @@
                     <h2 class="section-heading">Voici les résultat de votre requête:</h2>
                     <p><i> <?php echo($request)  ?></i> </p>
                     <p><i><?php echo($num_rows) ?> résultat.</i></p>
+
+
+<?php if ($num_rows > 0)
+{ ?>
         
 <table class="table">
   <thead>
@@ -155,26 +159,14 @@ foreach ($fields as $value)
   </tbody>
 </table>
           
-             
+<?php 
+} ?>     
 
         </div>
 
     </div>
 
-    <div class="content-section-b">
-
-        <div class="container">
-
-            <div class="row">
-             
-             
-                 
-               
-            </div>
-
-        </div>
-
-    </div>
+    
 
         <a  name="contact"></a>
     <div class="banner">
