@@ -95,7 +95,8 @@
            {
               $request = $_GET['request'];
              
-              $result = $bdd->query($request);
+              $result = $bdd->prepare($request);  
+              $result->execute();  
               $num_rows = $result->rowCount();
            
            }
@@ -118,9 +119,8 @@
   <thead>
     <tr>
     <?php 
-
-$fields = array_keys($result->fetch());
-
+$data = $result->fetchAll();
+$fields = array_keys($data[0]);
 
 foreach ($fields as $key => $val) // for some reason, MySQL return numbers for each columns
 {
@@ -140,20 +140,16 @@ foreach ($fields as $value)
   <tbody>
 
   <?php 
-    echo("Le nombre de rows:".$result->rowCount());
-   $data = $result->fetchAll();
+  
+   foreach($data as $row) { 
    
-   foreach($data as $row) 
-   {
-
+    
      echo('<tr>');
-
+ 
      foreach ($fields as $value)
      {
          echo('<td>'.$row[$value].'</td>');
      }
-     
-
     echo('</tr>');
    }
 ?>
