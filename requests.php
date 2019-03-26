@@ -230,6 +230,39 @@
                     ?>
                     </td></table>    
                     <br/>
+                    <h4 class="section-heading"><u>Division</u></h4>
+                    <p> La division est utile lorsqu'on veut retourner les insertions qui remplissent des conditions précises. </p>
+                    <p> D'après la table 'purchases' vue précedemment, nous écrivons la requète suivante : <table border = "1" cellspacing="1" cellpadding="1"><tr><td><div align=center>SELECT DISTINCT Username, LootboxNumber, Date FROM purchases WHERE LootboxNumber >19 LIMIT 0 , 30 </div></td><tr></table><br/>
+                    qui retourne les utilisateurs ayant acheté plus de 19 lootboxes en une seule fois.
+                    </p>
+                    <br/>
+                    
+                    
+                    <table  border ="1" cellspacing="1" cellpadding="1"><tr><td><div align=center>
+                    <tr>
+                         <th>Username</th>
+                         <th>Date</th>
+                         <th>LootboxNumber</th>
+                         
+                    </tr>
+                    </tr>
+                    <td>
+                    <?php 
+                    
+                    $result = $bdd->query("SELECT DISTINCT Username, Date, LootboxNumber FROM purchases WHERE LootboxNumber >19 LIMIT 0,30");
+                    $row = $result->fetch();
+                   // while ($row = $result->fetch())
+                   foreach($row as $result)
+                    {
+                        echo("<tr>");
+                        echo("<td>".$row['Username']."</td>");
+                        echo("<td>".$row['Date']."</td>");
+                        echo("<td>".$row['LootboxNumber']."</td>");
+                        
+                        echo("</tr>");
+                    }
+                    ?>
+                    </td></table>  
                     
 
 
