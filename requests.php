@@ -155,27 +155,117 @@
                     echo($row['AverageFireRate'])
 
                     ?>
+                    </td></table>    
                     <br/>
-                    </td></table>       <h4 class="section-heading"><u>Jointure</u></h4>
-                    <p> L'intérêt d'une jointure est de pouvoir créer des liens entre deux attributs de deux tables différentes.<br/> Nous allons donc nous servir des tables 'weapons' et 'characters' :</p>
-                    <img src = "https://i.imgur.com/t0LS0Wm.png"/><img src ="https://puu.sh/D4i1t/286b3ac322.png"><br/>
-                    <p> Nous écrivons la requète suivante : <table border = "1" cellspacing="1" cellpadding="1"><tr><td><div align=center> ALTER TABLE `characters` ADD FOREIGN KEY ( 'WeaponId' ) REFERENCES 'base_17004654'.'weapons' ('Id') ON DELETE RESTRICT ON UPDATE RESTRICT </div></td><tr></table><br/>
-                    qui associe l'attribut 'WeaponId' de la table 'Characters' à la clé primaire 'Id' de la table 'weapons'. Celà permet d'associer chaque personnage à une arme.
-                    <br/><br/>
+                    <h4 class="section-heading"><u>Jointure</u></h4>
+                    <p> L'intérêt d'une jointure est de pouvoir créer des liens entre deux tables différentes.<br/> Nous allons donc nous servir des tables 'weapons' et 'characters' :</p>
+                    <table>
+                    <td><img src = "https://i.imgur.com/t0LS0Wm.png"/></td>
+                    <td><br/></td>
+                    <td><img src ="https://puu.sh/D4i1t/286b3ac322.png"></td>
+                    </table><br/>
+                    <p> Nous écrivons la requète suivante : <table border = "1" cellspacing="1" cellpadding="1"><tr><td><div align=center> SELECT * FROM weapons NATURAL JOIN characters </div></td><tr></table><br/>
+                    qui créé une nouvelle table contenant les colonnes de mêmes noms et types dans les deux tables.
+                    <br/>
+                    
+              
+                    <h4 class="section-heading"><u>Group by</u></h4>
+                    <p>Le group by est une requète SQL intéressante lorsqu'on retrouve plusieurs fois une même entrée dans une table, celà permet de regrouper les données correspondant à cette entrée (par exemple) <br/> Nous allons ici nous servir de notre table purchases :</p>
+                    <img src = "https://i.imgur.com/WnL7Q2G.png"/><br/>
+                    <p> On retrouve ici plusieurs fois le même Username, on cherche donc à savoir combien de Lootbox au total chacun a acheté.
+                    <p> Nous écrivons la requète suivante : <table border = "1" cellspacing="1" cellpadding="1"><tr><td><div align=center>SELECT Username, SUM(LootboxNumber) FROM purchases GROUP BY Username</div></td><tr></table><br/>
+                    </p>
+                    <br/>
+                    <p> Nous obtenons alors les usernames avec le nombre total de lootbox qu'ils ont respectivement achetées.
                     
                     
                     <table  border ="1" cellspacing="1" cellpadding="1"><tr><td><div align=center>
                     <tr>
-                         <th >AverageFirerate</th>
+                         <th >Username</th>
+                         <th>LootboxCount</th>
                     </tr>
                     <td>
                     <?php 
                     
-                    $result = $bdd->query("SELECT AVG( Firerate ) AS AverageFireRate FROM weapons");
-                    $row = $result->fetch();
-                    echo($row['AverageFireRate'])
-
+                    $result = $bdd->query("SELECT Username, SUM(LootboxNumber) AS LootboxNumber  FROM purchases GROUP BY Username");
+                    while ($row = $result->fetch())
+                    {
+                        echo("<tr>");
+                        echo("<td>".$row['Username']."</td>");
+                        echo("<td>".$row['LootboxNumber']."</td>");
+                        echo("</tr>");
+                    }
                     ?>
+                    </td></table>
+                    <br/>
+                      <h4 class="section-heading"><u>Différence</u></h4>
+                    <p> Utile ici lorsque l'on cherche à retourner une table sans certaines valeurs d'un ou plusieurs attributs sous certaines conditions. <br/> Notre table 'maps' est la suivante :</p>
+                    <img src = "https://i.imgur.com/st6AMdu.png"/><br/>
+                    <p> Nous écrivons la requète suivante : <table border = "1" cellspacing="1" cellpadding="1"><tr><td><div align=center> SELECT Name, Type FROM maps map1 WHERE  map1.Type NOT IN (SELECT Type FROM maps map2 WHERE Type =! "Escort") </div></td><tr></table><br/>
+                    qui créé une nouvelle instance de la table 'maps' appelée map1 sans les cartes qui sont des escortes.
+                    </p>
+                    <br/>
+                    
+                    
+                    <table  border ="1" cellspacing="1" cellpadding="1"><tr><td><div align=center>
+                    <tr> 
+                    <p>map1</p>
+                    <tr>
+                         <th>Name</th>
+                         <th>Type</th>
+                    </tr>
+                    </tr>
+                    <td>
+                    <?php 
+                    
+                    $result = $bdd->query("SELECT Name, Type FROM maps map1 WHERE  map1.Type NOT IN (SELECT Type FROM maps map2 WHERE Type = 'Escort')");
+                    $row = $result->fetch();
+                    while ($row = $result->fetch())
+                    {
+                        echo("<tr>");
+                        echo("<td>".$row['Name']."</td>");
+                        echo("<td>".$row['Type']."</td>");
+                        echo("</tr>");
+                    }
+                    ?>
+                    </td></table>    
+                    <br/>
+                    <h4 class="section-heading"><u>Division</u></h4>
+                    <p> La division est utile lorsqu'on veut retourner les insertions qui remplissent des conditions précises. </p>
+                    <p> D'après la table 'purchases' vue précedemment, nous écrivons la requète suivante : <table border = "1" cellspacing="1" cellpadding="1"><tr><td><div align=center>SELECT DISTINCT Username, LootboxNumber, Date FROM purchases WHERE LootboxNumber >19 LIMIT 0 , 30 </div></td><tr></table><br/>
+                    qui retourne les utilisateurs ayant acheté plus de 19 lootboxes en une seule fois.
+                    </p>
+                    <br/>
+                    
+                    
+                    <table  border ="1" cellspacing="1" cellpadding="1"><tr><td><div align=center>
+                    <tr>
+                         <th>Username</th>
+                         <th>Date</th>
+                         <th>LootboxNumber</th>
+                         
+                    </tr>
+                    </tr>
+                    <td>
+                    <?php 
+                    
+                    $result = $bdd->query("SELECT DISTINCT Username, Date, LootboxNumber FROM purchases WHERE LootboxNumber >19 LIMIT 0,30");
+                    $row = $result->fetch();
+                   // while ($row = $result->fetch())
+                   foreach($row as $result)
+                    {
+                        echo("<tr>");
+                        echo("<td>".$row['Username']."</td>");
+                        echo("<td>".$row['Date']."</td>");
+                        echo("<td>".$row['LootboxNumber']."</td>");
+                        
+                        echo("</tr>");
+                    }
+                    ?>
+                    </td></table>  
+                    
+
+
 
 
                     </div></td><tr></table><br/></td>
@@ -216,26 +306,28 @@
         <!-- /.container -->
 
 
-	<a  name="contact"></a>
+        <a  name="contact"></a>
     <div class="banner">
 
         <div class="container">
 
             <div class="row">
                 <div class="col-lg-6">
-                    <h2>Connect to Start Bootstrap:</h2>
+                   
                 </div>
                 <div class="col-lg-6">
                     <ul class="list-inline banner-social-buttons">
                         <li>
-                            <a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
+                            <a href="https://twitter.com/Limoelou1" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
                         </li>
                         <li>
-                            <a href="https://github.com/IronSummitMedia/startbootstrap" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
+                        
+                            <a href="http://github.com/Limoelou" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
                         </li>
                         <li>
-                            <a href="#" class="btn btn-default btn-lg"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name">Linkedin</span></a>
+                            <a href="https://www.linkedin.com/in/louis-robert-2b4525183/" class="btn btn-default btn-lg"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name">Linkedin</span></a>
                         </li>
+                        <h3>Suivez nous sur les différentes plateformes !</h3>
                     </ul>
                 </div>
             </div>
@@ -244,35 +336,41 @@
         <!-- /.container -->
 
     </div>
+    
     <!-- /.banner -->
 
     <!-- Footer -->
+    <center>
     <footer>
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <ul class="list-inline">
-                        <li>
-                            <a href="#">Home</a>
+                         <li class="footer-menu-divider">&sdot;</li>
+                            <a href="index.php#">Accueil</a>
+                        </li>
+                        <li class="footer-menu-divider">&sdot;</li>
+                            <a href="#">Haut de page</a>
                         </li>
                         <li class="footer-menu-divider">&sdot;</li>
                         <li>
-                            <a href="#about">About</a>
+                            <a href="index.php#services">A propos de nous</a>
                         </li>
                         <li class="footer-menu-divider">&sdot;</li>
                         <li>
-                            <a href="#services">Services</a>
+                            <a href="index.php#data">Données et schéma</a>
                         </li>
                         <li class="footer-menu-divider">&sdot;</li>
                         <li>
                             <a href="#contact">Contact</a>
                         </li>
                     </ul>
-                   
+
                 </div>
             </div>
         </div>
     </footer>
+       </center>
 
     <!-- jQuery -->
     <script src="js/jquery.js"></script>

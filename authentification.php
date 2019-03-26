@@ -5,6 +5,13 @@
    require_once ('php/config.php');
    require_once ('php/SQLMethods.php');
    session_start();
+
+
+    if (isset($_SESSION['account']) == true)
+    {
+        echo('<i class="fa fa-times close"></i><meta http-equiv="refresh" content="0; URL=account.php">');
+        exit;
+    }
 ?>
 <head>
 
@@ -96,7 +103,7 @@
                   
                     <div class="clearfix"></div>
                     <h2 class="section-heading">Authentification</h2>
-                    <p class="lead">Voici un page de connexion, elle fonctionne grâce a différentes requêtes SQL et permet de se connecter a son compte Overwatch.</p>
+                    <p class="lead">Voici une page de connexion, elle fonctionne grâce à différentes requêtes SQL et permet de se connecter à son compte Overwatch.</p>
                    
                     <form action="account.php">
                             Nom d'Utilisateur: <input type="text" name="username"><br>
@@ -142,12 +149,12 @@
 
             <div class="row">
                 <div class="col-lg-6">
-                    <h2>Connect to Start Bootstrap:</h2>
+                    <h2>Suivez nous sur les différentes plateformes !</h2>
                 </div>
                 <div class="col-lg-6">
                     <ul class="list-inline banner-social-buttons">
                         <li>
-                            <a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
+                            <a href="https://twitter.com/Limoelou1" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
                         </li>
                         <li>
                             <a href="https://github.com/IronSummitMedia/startbootstrap" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
@@ -171,27 +178,31 @@
             <div class="row">
                 <div class="col-lg-12">
                     <ul class="list-inline">
-                        <li>
-                            <a href="#">Home</a>
+                         <li class="footer-menu-divider">&sdot;</li>
+                            <a href="index.php#">Accueil</a>
+                        </li>
+                        <li class="footer-menu-divider">&sdot;</li>
+                            <a href="#">Haut de page</a>
                         </li>
                         <li class="footer-menu-divider">&sdot;</li>
                         <li>
-                            <a href="#about">About</a>
+                            <a href="index.php#services">A propos de nous</a>
                         </li>
                         <li class="footer-menu-divider">&sdot;</li>
                         <li>
-                            <a href="#services">Services</a>
+                            <a href="index.php#data">Données et schéma</a>
                         </li>
                         <li class="footer-menu-divider">&sdot;</li>
                         <li>
                             <a href="#contact">Contact</a>
                         </li>
                     </ul>
-                   
+
                 </div>
             </div>
         </div>
     </footer>
+       </center>
 
     <!-- jQuery -->
     <script src="js/jquery.js"></script>

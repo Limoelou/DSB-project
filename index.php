@@ -126,7 +126,7 @@
                     <p class="lead">Ce site web a été crée dans le cadre du cours du DSB en deuxième année de licence, a l'ISTIC. Il a été réalisé en <b>XHTML</b>, <b>PHP</b> et <b>MySQL</b>
                     Nous avons rempli manuellement nos tables SQL à partir des informations récupérées sur le site <a href="https://overwatch.gamepedia.com/Overwatch_Wiki">Overwatch Wiki</a>
                     
-                    en rapport avec le jeu vidéo de Blizzard: Overwatch. </p>
+                    en rapport avec le jeu vidéo de Blizzard : Overwatch. </p>
                     
                   
               
@@ -141,12 +141,14 @@
     </div>
     <!-- /.content-section-a -->
     <center>
+    <a  name="data"></a>
     <div class="content-section-a">
             <div class="container">
             
                     <h2 class="section-heading">Données </h2>
                     <p class="lead"> <a href="xmlGeneration.php">Données au format XML</a> </p>
-                    <p class="lead"> <a href="TODO">Télécharger le fichier DTD</a> </p>
+                    <p class="lead"> <a href="dsb.sql">Données au format SQL (non synchronisé)</a> </p>
+                    <p class="lead"> <a href="struct.dtd">Télécharger le fichier DTD</a> </p>
 
             </div>
      </center>
@@ -212,7 +214,7 @@
                 <div class="col-lg-6">
                     <ul class="list-inline banner-social-buttons">
                         <li>
-                            <a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
+                            <a href="https://twitter.com/Limoelou1" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
                         </li>
                         <li>
                         
@@ -240,16 +242,19 @@
             <div class="row">
                 <div class="col-lg-12">
                     <ul class="list-inline">
-                        <li>
-                            <a href="#">Accueil</a>
+                         <li class="footer-menu-divider">&sdot;</li>
+                            <a href="index.php#">Accueil</a>
+                        </li>
+                        <li class="footer-menu-divider">&sdot;</li>
+                            <a href="#">Haut de page</a>
                         </li>
                         <li class="footer-menu-divider">&sdot;</li>
                         <li>
-                            <a href="#about">A propos de nous</a>
+                            <a href="index.php#services">A propos de nous</a>
                         </li>
                         <li class="footer-menu-divider">&sdot;</li>
                         <li>
-                            <a href="#services">Données et schéma</a>
+                            <a href="index.php#data">Données et schéma</a>
                         </li>
                         <li class="footer-menu-divider">&sdot;</li>
                         <li>
