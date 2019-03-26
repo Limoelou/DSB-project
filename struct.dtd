@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<!DOCTYPE dsb [
  <!ELEMENT account (Id,Username, Password,Lootbox,Gold,Level,Rank)>
  <!ELEMENT Id (#PCDATA)>
  <!ELEMENT Username (#PCDATA)>
@@ -12,36 +10,39 @@
  <!ELEMENT accountbanned (AccountId, BanDate, Reason)>
  <!ELEMENT AccountId (#PCDATA)>
  <!ELEMENT BanDate (#PCDATA)>
+ <!ELEMENT Reason (#PCDATA)>
 
- <!ELEMENT weapons (Id, Name, CanHeadshot, IsMelee, Magazine?, DamagePerHit, FireRate)
- <!ELEMENT Id (#PCDATA)>
+ <!ELEMENT weapons (WeaponId, Name, CanHeadshot, IsMelee, Magazine?, DamagePerHit, FireRate) >
+ <!ELEMENT WeaponId (#PCDATA)>
  <!ELEMENT Name (#PCDATA)>
- <!ELEMENT CanHeadshot (Yes | No)> // ?! \\
- <!ELEMENT IsMelee (Yes | No)> //J'imagine que c'est ça ^^'
- <!ELEMENT Magazine (#PCDATA)> // ?! \\
+ <!ELEMENT CanHeadshot (#PCDATA)> 
+ <!ELEMENT IsMelee (#PCDATA)> 
+ <!ELEMENT Magazine (#PCDATA)> 
  <!ELEMENT DamagePerHit (#PCDATA)>
  <!ELEMENT FireRate (#PCDATA)>
 
 
- <!ELEMENT characters (Id,Name,LifePoints,Armor?,MapId,SkinId,WeaponId,Shield?>
- <!ELEMENT Id (#PCDATA)>
- <!ELEMENT Name (#PCDATA)>
+ <!ELEMENT characters (Id2,Name2,LifePoints,Armor?,MapId,SkinId,WeaponId2,Shield?)>
+ <!ELEMENT Id2 (#PCDATA)>
+ <!ELEMENT Name2 (#PCDATA)>
  <!ELEMENT LifePoints (#PCDATA)>
- <!ELEMENT Armor (#PCDATA)> // Je sais pas si je dois remettre le "?" j'ai pas trouvé
+ <!ELEMENT Armor (#PCDATA)> 
  <!ELEMENT MapId (#PCDATA)>
  <!ELEMENT SkinId (#PCDATA)>
- <!ELEMENT WeaponId (#PCDATA)>
- <!ELEMENT Shield (#PCDATA)> // Pareil qu'au dessus
+ <!ELEMENT WeaponId2 (#PCDATA)>
+ <!ELEMENT Shield (#PCDATA)> 
 
- <!ELEMENT maps (Id, Name, Type)
- <!ELEMENT Id (#PCDATA)>
- <!ELEMENT Name (#PCDATA)>
+ <!ELEMENT maps (Id3, Name3, Type) >
+ <!ELEMENT Id3 (#PCDATA)>
+ <!ELEMENT Name3 (#PCDATA)>	
  <!ELEMENT Type (#PCDATA)>
 
- <!ELEMENT purchases (AccountId, Date, LootBoxNumber)
- <!ELEMENT AccountId (#PCDATA)>
+ <!ELEMENT purchases (AccountId2, Date, LootBoxNumber) >
+ <!ELEMENT AccountId2 (#PCDATA)>
  <!ELEMENT Date (#PCDATA)>
  <!ELEMENT LootBoxNumber (#PCDATA)>
-]>
+ 
+ <!ELEMENT dsb (value) >
+ <!ELEMENT value (#PCDATA)>
+ 
 
-//ICI LA SUITE DU COUP

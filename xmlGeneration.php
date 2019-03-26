@@ -93,17 +93,10 @@
         <center>
           <?php echo(createXML($bdd)); ?>
 
-<<<<<<< HEAD
-          <h2 class="section-heading">Génération XML terminée!</h2>
-            <p> La base de donnée vient d'être générée au format XML en temps réel grâce a la fonction <i>createXML($bdd)</i>
-            dans le fichier SQLMethods.php </p> 
-          <a href="database.xml" class="btn btn-default">Télécharger le fichier XML</a>
-=======
         <h2 class="section-heading">Génération XML terminée!</h2>
             <p> Les données on été exportés au format XML de manière synchronisée a la<br> base de donnée SQL grâce a la fonction <i>createXML($bdd)</i>
             dans le fichier SQLMethods.php </p> 
          <a href="database.xml" class="btn btn-default">Afficher le fichier XML</a>
->>>>>>> 3b25e6455c5557aa2fd16fc876ffeed6b241ee87
 
         </div>
 

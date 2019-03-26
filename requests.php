@@ -164,10 +164,24 @@
                     <td><br/></td>
                     <td><img src ="https://puu.sh/D4i1t/286b3ac322.png"></td>
                     </table><br/>
-                    <p> Nous écrivons la requète suivante : <table border = "1" cellspacing="1" cellpadding="1"><tr><td><div align=center> SELECT * FROM weapons NATURAL JOIN characters </div></td><tr></table><br/>
+                    <p> Nous écrivons la requète suivante : <table border = "1" cellspacing="1" cellpadding="1"><tr><td><div align=center> SELECT * FROM weapons INNER JOIN characters </div></td><tr></table><br/>
                     qui créé une nouvelle table contenant les colonnes de mêmes noms et types dans les deux tables.
                     <br/>
+
+                    <p> Voici le résultat: </p>
+
+                  
+                     <?php 
                     
+                /*   $result = $bdd->query("SELECT * FROM weapons INNER JOIN characters");
+                     while ($row = $result->fetch())
+                     {
+                        echo("<tr>");
+                        echo("<td>".$row['Username']."</td>");
+                        echo("<td>".$row['LootboxNumber']."</td>");
+                        echo("</tr>");
+                     } */
+                     ?>
               
                     <h4 class="section-heading"><u>Group by</u></h4>
                     <p>Le group by est une requète SQL intéressante lorsqu'on retrouve plusieurs fois une même entrée dans une table, celà permet de regrouper les données correspondant à cette entrée (par exemple) <br/> Nous allons ici nous servir de notre table purchases :</p>
@@ -250,9 +264,8 @@
                     <?php 
                     
                     $result = $bdd->query("SELECT DISTINCT Username, Date, LootboxNumber FROM purchases WHERE LootboxNumber >19 LIMIT 0,30");
-                    $row = $result->fetch();
-                   // while ($row = $result->fetch())
-                   foreach($row as $result)
+                  
+                   while ($row = $result->fetch())
                     {
                         echo("<tr>");
                         echo("<td>".$row['Username']."</td>");

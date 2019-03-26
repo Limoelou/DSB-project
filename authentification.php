@@ -112,8 +112,8 @@
                            
 
                   
-                   
-         <button type="submit">Se connecter</button>
+                          
+         <button type="submit" class="btn btn-default">Se connecter</button>
       </form>
              </center>
            
