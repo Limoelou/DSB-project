@@ -109,12 +109,10 @@
                             Nom d'Utilisateur: <input type="text" name="username"><br>
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;Mot de passe: &nbsp;&nbsp;<input type="password" name="password"><br>
                             <br>
-                           
+                    <button type="submit" class="btn btn-default">Se connecter</button>
+                    <br> 
+                     </form>
 
-                  
-                          
-         <button type="submit" class="btn btn-default">Se connecter</button>
-      </form>
              </center>
            
 
