@@ -99,7 +99,37 @@
          <a href="database.xml" class="btn btn-default">Afficher le fichier XML</a>
 
          <br>
-                    <?php echo implode(' ',getXML()->xpath('/*')); ?>
+
+
+         <h2 class="section-heading">XPath</h2>
+                  
+                 
+
+                  <div class="form-group">
+                    <label for="exampleFormControlTextarea1"> Voici les résultat de la reqûete XPATH:</label>
+                 <textarea class="form-control rounded-0" value= id="exampleFormControlTextarea1" rows="10">
+                 
+                 
+                 <?php 
+                    
+                    $dat = getXML()->xpath('/dsb/account');
+                  
+                    
+                    
+                    foreach ($dat as $value)
+                    {
+                        echo $value->asXml();
+                    }
+                    
+                    
+                    ?>
+                 
+                 
+                 
+                 </textarea>
+                      </div>
+
+                  
         </div>
 
         </center>
