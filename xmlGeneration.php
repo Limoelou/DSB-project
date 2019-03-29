@@ -98,7 +98,21 @@
             dans le fichier SQLMethods.php </p> 
          <a href="database.xml" class="btn btn-default">Afficher le fichier XML</a>
 
-         <br>
+         <br/><br/><br/>
+
+                  <center>
+                 <form action="xmlGeneration.php">
+                     Requête XPATH : <br/> <input type="text" name="request" value=""><br>
+
+                            <br>
+                    <button type="submit" class="btn btn-default">Executer</button>
+
+                    </form>
+                      </div>
+
+                  <center/>
+
+        <br/><br/>
 
 
          <h2 class="section-heading">XPath</h2>
@@ -110,26 +124,27 @@
                  <textarea class="form-control rounded-0" value= id="exampleFormControlTextarea1" rows="10">
                  
                  
+                 
                  <?php 
                     
-                    $dat = getXML()->xpath('/dsb/account');
-                  
-                    
-                    
+                if(isset($_GET['request']))
+                   {
+                $request = $_GET['request'];
+                $dat = getXML()->xpath($request);
+
                     foreach ($dat as $value)
                     {
                         echo $value->asXml();
                     }
                     
+                   }
                     
                     ?>
                  
                  
                  
                  </textarea>
-                      </div>
-
-                  
+        
         </div>
 
         </center>
