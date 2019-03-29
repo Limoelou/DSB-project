@@ -12,6 +12,10 @@ function createQuery($query)
    $formatedQuery = str_replace(" ","+",$query);
    return "sql.php?request=".$formatedQuery;
 }
+function getXML()
+{
+   return simplexml_load_file("database.xml");
+}
 function createXML($db)
 {
   $my_file = 'database.xml';

@@ -98,6 +98,8 @@
             dans le fichier SQLMethods.php </p> 
          <a href="database.xml" class="btn btn-default">Afficher le fichier XML</a>
 
+         <br>
+                    <?php echo implode(' ',getXML()->xpath('/*')); ?>
         </div>
 
         </center>

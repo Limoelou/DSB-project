@@ -119,9 +119,9 @@
                   
                     <div class="clearfix"></div>
                     <h2 class="section-heading">Auteurs</h2>
+                    <p class="lead">Lumbroso Marius <a href="http://github.com/Skinz3">Github</a></p>
+                    <p class="lead">Robert Louis <a href="https://github.com/Limoelou">Github</a></p>
                     <p class="lead">Louis-Bonneau Melen</p>
-                    <p class="lead">Lumbroso Marius</p>
-                    <p class="lead">Robert Louis</p>
                     <h2 class="section-heading">Présentation</h2>
                     <p class="lead">Ce site web a été crée dans le cadre du cours du DSB en deuxième année de licence, a l'ISTIC. Il a été réalisé en <b>XHTML</b>, <b>PHP</b> et <b>MySQL</b>
                     Nous avons rempli manuellement nos tables SQL à partir des informations récupérées sur le site <a href="https://overwatch.gamepedia.com/Overwatch_Wiki">Overwatch Wiki</a>
