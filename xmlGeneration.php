@@ -102,7 +102,7 @@
 
                   <center>
                  <form action="xmlGeneration.php">
-                     Requête XPATH : <br/> <input type="text" name="request" value=""><br>
+                     Requête XPATH : <br/> <input type="text" name="request" value="/dsb"><br>
 
                             <br>
                     <button type="submit" class="btn btn-default">Executer</button>
@@ -121,7 +121,7 @@
 
                   <div class="form-group">
                     <label for="exampleFormControlTextarea1"> Voici les résultat de la reqûete XPATH:</label>
-                 <textarea class="form-control rounded-0" value= id="exampleFormControlTextarea1" rows="10">
+                 <textarea class="form-control rounded-0"  value= id="exampleFormControlTextarea1" rows="10">
                  
                  
                  
@@ -129,13 +129,13 @@
                     
                 if(isset($_GET['request']))
                    {
-                $request = $_GET['request'];
-                $dat = getXML()->xpath($request);
+                        $request = $_GET['request'];
+                         $dat = getXML()->xpath($request);
 
-                    foreach ($dat as $value)
-                    {
-                        echo $value->asXml();
-                    }
+                        foreach ($dat as $value)
+                        {
+                            echo $value->asXml();
+                        }
                     
                    }
                     

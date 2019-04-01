@@ -146,7 +146,9 @@
             <div class="container">
             
                     <h2 class="section-heading">Données </h2>
+                    
                     <p class="lead"> <a href="xmlGeneration.php">Données au format XML</a> </p>
+                    <p class="lead"> <a href="database.csv">Données au format CSV (non synchronisé)</a> </p>
                     <p class="lead"> <a href="dsb.sql">Données au format SQL (non synchronisé)</a> </p>
                     <p class="lead"> <a href="struct.dtd">Télécharger le fichier DTD</a> </p>
 
