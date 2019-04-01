@@ -67,25 +67,21 @@
 
                 </ul>
             </div>
-            <!-- /.navbar-collapse -->
+          
         </div>
-        <!-- /.container -->
+      
     </nav>
 
 
-    <!-- Header -->
     <a name="about"></a>
     <div class="intro-header">
         <div class="container">
             <img src="img/logo.png" >
         </div>
-        <!-- /.container -->
+       
 
     </div>
-    <!-- /.intro-header -->
-
-    <!-- Page Content -->
-
+ 
 	<a  name="services"></a>
     <div class="content-section-a">
 
@@ -148,10 +144,10 @@
         </div>
 
         </center>
-        <!-- /.container -->
+       
 
     </div>
-    <!-- /.content-section-a -->
+
 
     <div class="content-section-b">
 
@@ -165,11 +161,9 @@
             </div>
 
         </div>
-        <!-- /.container -->
-
+       
     </div>
-    <!-- /.content-section-b -->
-
+  
 
 	<a  name="contact"></a>
     <div class="banner">
