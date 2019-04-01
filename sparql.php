@@ -1,11 +1,12 @@
 <!DOCTYPE html>
+<html lang="en">
+
 <?php
    require_once ('php/config.php');
    require_once ('php/SQLMethods.php');
    session_start();
-?>
-<html lang="en">
 
+   ?>
 <head>
 
     <meta charset="utf-8">
@@ -14,24 +15,17 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Overwatch project</title>
+    <title>Overwatch Project - Requests</title>
 
-    <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Custom CSS -->
+
     <link href="css/landing-page.css" rel="stylesheet">
 
-    <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+
 
 </head>
 
@@ -51,7 +45,6 @@
                 <a class="navbar-brand topnav" href="#">Project DSB</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
-            
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
             
@@ -64,8 +57,6 @@
                     <li>
                         <a href="sparql.php">DBPedia</a>
                     </li>
-
-
                     <?php if (isset($_SESSION['account'])) {  ?>
                     <li>
                     <a href="account.php">Mon compte</a>
@@ -79,7 +70,6 @@
 
                 </ul>
             </div>
-            
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container -->
@@ -91,21 +81,6 @@
     <div class="intro-header">
         <div class="container">
             <img src="img/logo.png" >
-
-                
-        
-                      
-                        <h3>Bienvenue sur le site de notre projet de DSB!</h3>
-                        <hr class="intro-divider">
-                        <ul class="list-inline intro-social-buttons">
-                         
-                            <li>
-                                <a href="https://github.com/Limoelou/DSB-project" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
-                            </li>
-                        </ul>
-                    </div>
-            
-
         </div>
         <!-- /.container -->
 
@@ -115,100 +90,103 @@
     <!-- Page Content -->
 
 	<a  name="services"></a>
-    <div class="content-section-b">
+    <div class="content-section-a">
 
         <div class="container">
-           
-             <center>
+        <center>
+        <div class="clearfix"></div>
+           <h2 class="section-heading">SPARQL</h2>
+
+        <p> Sur cette page, nous comparons certaines données de notre base de données avec celle de DBPedia afin d'obtenir de plus amples informations sur nos insertions. <br/>
+         Pour celà, nous utilisons des requètes SPARQL, spécialement faites pour récupérer des données sur DBpedia <br/>
+          Dans le cas ci-dessous, nous récupérons les données que possède DBpedia sur une des cartes de notre jeu (celle ci étant issue de la réalité) : Rialto</i> </p>
+         
+       
+          <p>  On selectionne une carte grâce a la requête <i>SELECT Name from maps LIMIT 1</i> </p>
+          <img src="img/sparql1.png"> 
+          <p> Le résultat XML de notre requète SPARQL sur DBpédia est affiché ci-dessous, on insère les données récupérées au format XML dans notre table 'dbpedia' de la base de données ce qui conclut notre utilisation de DBpedia. </p>     
+          <img src="img/sparql2.png">
+          
+          <p>Voici le resultat produit : </p>
+          <img src="img/sparql3.png">
+             <?php 
+                 $result = $bdd->prepare("SELECT Name from maps LIMIT 1");  
+                 $result->execute();  
+
+                 $city = $result->fetch()['Name'];         
+      
+                 $baseURL = "http://fr.dbpedia.org/sparql?default-graph-uri=&query=select+*+where+%7B%3Chttp%3A%2F%2Ffr.dbpedia.org%2Fresource%2F@%3E+%3Fr+%3Fp%7D&format=xml%2Fhtml&timeout=0&debug=on";
+
+                    
+                 $uri = str_replace("@",$city,$baseURL);
+                    
+                 $xml= simplexml_load_file($uri);
+                 $xmlText = $xml->asXml();
+          
+
+                 $result = $bdd->prepare("delete from dbpedia"); 
+                 $result->execute();  
+
+                foreach ($xml->results->result as $value)
+                {
+                    $valueText = $value->binding[1]->uri;
+
+                    if ($valueText == "")
+                    continue;
+                   
+
+                   try
+                   {
+                    $result = $bdd->prepare("INSERT INTO dbpedia (MapName,DBpediaData) VALUES ('".$city."','".$valueText."')");  
+                    $result->execute();  
+                   }
+                   catch (Exception $e)
+                   {
+                        // cas ou il y a des caractères spéciaux ou des apostrophes dans les résultats de DBPedia, (russes etc)
+
+                   }
+                }
+              
                   
-                    <div class="clearfix"></div>
-                    <h2 class="section-heading">Auteurs</h2>
-                    <p class="lead">Lumbroso Marius <a href="http://github.com/Skinz3">Github</a></p>
-                    <p class="lead">Robert Louis <a href="https://github.com/Limoelou">Github</a></p>
-                    <p class="lead">Louis-Bonneau Melen</p>
-                    <h2 class="section-heading">Présentation</h2>
-                    <p class="lead">Ce site web a été crée dans le cadre du cours du DSB en deuxième année de licence, a l'ISTIC. Il a été réalisé en <b>XHTML</b>, <b>PHP</b> et <b>MySQL</b>
-                    Nous avons rempli manuellement nos tables SQL à partir des informations récupérées sur le site <a href="https://overwatch.gamepedia.com/Overwatch_Wiki">Overwatch Wiki</a>
-                    
-                    en rapport avec le jeu vidéo de Blizzard : Overwatch. </p>
-                    
-                
-              
-                 </center>
-              
-             
-           
+               
+
+            // http://fr.dbpedia.org/sparql select * where {<http://fr.dbpedia.org/resource/Paris> ?r ?p}
+          
+            ?>
+ </center>
+            <center>
+            </br>
+              <a href="<?php echo $uri ?>" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Télécharger les données de DBPedia</a>
+            </center>
 
         </div>
         <!-- /.container -->
 
     </div>
     <!-- /.content-section-a -->
-    <center>
-    <a  name="data"></a>
-    <div class="content-section-a">
-            <div class="container">
-            
-                    <h2 class="section-heading">Données </h2>
-                    
-                    <p class="lead"> <a href="xmlGeneration.php">Données au format XML</a> </p>
-                    <p class="lead"> <a href="database.csv">Données au format CSV (non synchronisé)</a> </p>
-                    <p class="lead"> <a href="dsb.sql">Données au format SQL (non synchronisé)</a> </p>
-                    <p class="lead"> <a href="struct.dtd">Télécharger le fichier DTD</a> </p>
 
-            </div>
-     </center>
+    <div class="content-section-b">
 
-     </div>
+        <div class="container">
+
+            <div class="row">
              
              
                  
                
-
-        <!-- /.container -
-    <!-- /.content-section-b -->
-
-
-
-    <center>
-    <div class="content-section-b">
-            <div class="container">
-            
-                   <center> <h2 class="section-heading">Schéma conceptuel et interprétation des relations </h2> </center>
-                   
-                    <p class="lead">Le schéma suivant nous permet d'avoir une représentation compréhensible et simplifiée des relations qui existent entre les différentes tables.
-                    <br/> <br/> 
-                    <img src = "img/model.png">
-                    
             </div>
-     </center>
 
-     </div>
-             
-         
+        </div>
         <!-- /.container -->
 
     </div>
-    <!-- /.content-section-a -->
-    
-    <center>
-    <div class="content-section-a">
-            <div class="container">
-            
-                   <center> <h2 class="section-heading">Requètes SQL</h2> </center>
-                   
-                    <p class="lead">Les requètes ont été ajoutées sur une autre page du site qui leur est entièrement consacrée afin d'y voir plus clair !<br/>
-                    <center> Cliquez sur le faucheur ahuri ci-dessous pour y accéder. </center>
-                    <br/>
-                    <a href="Requests"><img width = 327 height = 541 src="img/reaper.png" alt="Lien vers les requètes SQL"/></a>    <br/> <br/> 
+    <!-- /.content-section-b -->
 
-                    
-            </div>
-     </center>
+        
+        <!-- /.container -->
 
-     </div>
 
-	<a  name="contact"></a>
+        <a  name="contact"></a>
     <div class="banner">
 
         <div class="container">
@@ -224,10 +202,10 @@
                         </li>
                         <li>
                         
-                            <a href="https://github.com/IronSummitMedia/startbootstrap" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
+                            <a href="http://github.com/Limoelou" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
                         </li>
                         <li>
-                            <a href="#" class="btn btn-default btn-lg"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name">Linkedin</span></a>
+                            <a href="https://www.linkedin.com/in/louis-robert-2b4525183/" class="btn btn-default btn-lg"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name">Linkedin</span></a>
                         </li>
                         <h3>Suivez nous sur les différentes plateformes !</h3>
                     </ul>

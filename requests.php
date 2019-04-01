@@ -96,7 +96,9 @@
                     <li>
                         <a href="requests.php">Requêtes</a>
                     </li>
-
+                    <li>
+                        <a href="sparql.php">DBPedia</a>
+                    </li>
                     <?php if (isset($_SESSION['account'])) {  ?>
                     <li>
                     <a href="account.php">Mon compte</a>

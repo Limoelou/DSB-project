@@ -7,28 +7,31 @@ html {
     height: 100%;
 }
 
-body,
-h1,
+body,  
+h1, /* titres */
 h2,
 h3,
 h4,
 h5,
 h6 {
-    font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-weight: 700;
+    font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;  /* police */
+    font-weight: 700; /* épaisseur */
 }
 
-.topnav {
-    font-size: 14px; 
+.topnav 
+{
+    font-size: 14px;  /* barre de navigation du haut */
 }
 
-.lead {
+.lead  /* titres */
+{
     font-size: 18px;
     font-weight: 400;
 }
 
-.intro-header {
-    padding-top: 50px;
+.intro-header  /* photo présentation haut du site */
+{
+    padding-top: 50px; /* marge offset */
     padding-bottom: 50px;
     text-align: center;
     color: #f8f8f8;
@@ -36,13 +39,15 @@ h6 {
     background-size: cover;
 }
 
-.intro-message {
+.intro-message
+ {
     position: relative;
     padding-top: 20%;
     padding-bottom: 20%;
 }
 
-.intro-message > h1 {
+.intro-message > h1 
+    {
     margin: 0;
     text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
     font-size: 5em;
@@ -63,11 +68,11 @@ h6 {
         padding-bottom: 15%;
     }
 
-    .intro-message > h1 {
+    .intro-message > h1 {  /* même propriété que le titre sauf spécifiés */
         font-size: 3em;
     }
 
-    ul.intro-social-buttons > li {
+    ul.intro-social-buttons > li { 
         display: block;
         margin-bottom: 20px;
         padding: 0;
@@ -77,7 +82,7 @@ h6 {
         margin-bottom: 0;
     }
 
-    .intro-divider {
+    .intro-divider { /* séparateur */
         width: 100%;
     }
 }
@@ -162,6 +167,3 @@ footer {
     background-color: #f8f8f8;
 }
 
-p.copyright {
-    margin: 15px 0 0;
-}

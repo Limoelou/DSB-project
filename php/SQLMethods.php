@@ -1,6 +1,5 @@
 <?php
 
-
 function getAccount($bdd,$username)
 {
 	$result = $bdd->query("SELECT * FROM account where Username = '".$username."'");
