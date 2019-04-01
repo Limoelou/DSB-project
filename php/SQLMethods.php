@@ -15,6 +15,12 @@ function getXML()
 {
    return simplexml_load_file("database.xml");
 }
+function validate()
+{
+  $dom = new DOMDocument;
+  $dom->load('test.xml');
+  $dom->validate(); 
+}
 function createXML($db)
 {
   $my_file = 'database.xml';
@@ -26,10 +32,10 @@ function createXML($db)
 
   appendTable($db,$xml,"account");
   appendTable($db,$xml,"accountBanned");
-  appendTable($db,$xml,"characters");
-  appendTable($db,$xml,"maps");
-  appendTable($db,$xml,"purchases");
-  appendTable($db,$xml,"weapons");
+   appendTable($db,$xml,"characters");
+   appendTable($db,$xml,"maps");
+   appendTable($db,$xml,"purchases");
+   appendTable($db,$xml,"weapons");
 
   
 
@@ -43,7 +49,7 @@ function createXML($db)
 
   $dom = new DOMDocument;
   $dom->load('database.xml');
- // $dom->validate(); todo loule
+  $dom->validate(); 
 }
 
 function appendTable($db,$xml,$tableName)

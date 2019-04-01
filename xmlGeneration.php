@@ -94,10 +94,11 @@
         <h2 class="section-heading">Génération XML terminée!</h2>
             <p> Les données on été exportés au format XML de manière synchronisée a la<br> base de donnée SQL grâce a la fonction <i>createXML($bdd)</i>
             dans le fichier SQLMethods.php </p> 
+            <p> Le fichier struct.DTD a également été validé lors de la génération. </p>
          <a href="database.xml" class="btn btn-default">Afficher le fichier XML</a>
 
          <br/><br/><br/>
-
+         <h2 class="section-heading">XPath</h2>
                   <center>
                  <form action="xmlGeneration.php">
                      Requête XPATH : <br/> <input type="text" name="request" value="/dsb"><br>
@@ -113,7 +114,7 @@
         <br/><br/>
 
 
-         <h2 class="section-heading">XPath</h2>
+    
                   
                  
 
@@ -200,32 +201,37 @@
     <!-- /.banner -->
 
     <!-- Footer -->
+    <center>
     <footer>
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <ul class="list-inline">
-                        <li>
-                            <a href="#">Home</a>
+                         <li class="footer-menu-divider">&sdot;</li>
+                            <a href="index.php#">Accueil</a>
+                        </li>
+                        <li class="footer-menu-divider">&sdot;</li>
+                            <a href="#">Haut de page</a>
                         </li>
                         <li class="footer-menu-divider">&sdot;</li>
                         <li>
-                            <a href="#about">About</a>
+                            <a href="index.php#services">A propos de nous</a>
                         </li>
                         <li class="footer-menu-divider">&sdot;</li>
                         <li>
-                            <a href="#services">Services</a>
+                            <a href="index.php#data">Données et schéma</a>
                         </li>
                         <li class="footer-menu-divider">&sdot;</li>
                         <li>
                             <a href="#contact">Contact</a>
                         </li>
                     </ul>
-                   
+
                 </div>
             </div>
         </div>
     </footer>
+       </center>
 
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
