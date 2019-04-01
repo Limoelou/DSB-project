@@ -11,7 +11,7 @@
  Target Server Version : 50724
  File Encoding         : 65001
 
- Date: 24/03/2019 16:28:29
+ Date: 01/04/2019 18:52:11
 */
 
 SET NAMES utf8mb4;
@@ -34,7 +34,7 @@ CREATE TABLE `account`  (
 -- ----------------------------
 -- Records of account
 -- ----------------------------
-INSERT INTO `account` VALUES (1, 'Limoelou', 'Limouiled', 150, 5000, 456, 'DoudouMasta');
+INSERT INTO `account` VALUES (1, 'Limoelou', 'Limouiledh', 150, 5000, 456, 'DoudouMasta');
 INSERT INTO `account` VALUES (2, 'Skinz', 'Mandoled', 8, 3, 6000, 'GrandMandol');
 INSERT INTO `account` VALUES (3, 'Jacket', 'MelenFarmer', 0, 60000, 890, 'GenjiOTP');
 INSERT INTO `account` VALUES (4, 'Patrick', 'Sebastien', 39, 9, 39, 'Gold');
